@@ -42,7 +42,7 @@ plugins:
   - search:
       lang: zh
   - awesome-nav:
-      nav_file: INDEX.md
+      filename: INDEX.md
   - section-index
 
 markdown_extensions:

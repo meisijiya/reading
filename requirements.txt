@@ -1,10 +1,10 @@
 # === MkDocs 核心 ===
-mkdocs>=1.5,<1.6
+mkdocs>=1.6,<2
 mkdocs-material[recommended]>=9.5,<10
 pyyaml>=6.0
 
 # === 自动导航 ===
-mkdocs-awesome-nav>=2.0,<3
+mkdocs-awesome-nav>=3.0,<4
 mkdocs-section-index>=0.3,<0.4
 
 # === Markdown 扩展 ===
