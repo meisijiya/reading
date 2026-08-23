@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -27,4 +27,9 @@ jobs:
           cache: pip
       - run: pip install -r requirements.txt
       - run: mkdocs build --strict
-      - run: mkdocs gh-deploy --force --clean --verbose
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4
