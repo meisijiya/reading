@@ -70,6 +70,25 @@ export WEREAD_API_KEY=$(grep -oP 'WEREAD_API_KEY=\K\S+' ~/.bashrc | tail -1)
 
 `mkdocs-awesome-nav` 靠它定位 section 入口；缺失则 `mkdocs build --strict` 失败，CI 挂掉。Worker 必须严格按规则一的目录模板建包，别自创目录结构、别省略 INDEX.md、别把 INDEX.md 塞到子目录里——任何一项违规都会让 CI 红。
 
+**半自动契约**（实测同步规则）：
+
+由于 `mkdocs-awesome-nav` 3.x 与本仓 Material 主题存在兼容性问题，实际采用手写 nav + docs/ 下 symlink 实现。新增书目录后，worker **必须**同时改两处：
+
+1. `mkdocs.yml` 的 `nav:` 段加一行，例：
+   ```yaml
+   nav:
+     - 首页: index.md
+     - 民法典100问: 民法典100问/INDEX.md
+     - "Vibe Coding：AI 编程时代的认知重构": "Vibe Coding：AI 编程时代的认知重构/INDEX.md"
+     - <新书名>: <新书名>/INDEX.md   # 新增
+   ```
+2. `docs/` 下建一个 symlink 指向新书目录，例：
+   ```bash
+   cd docs && ln -s ../<新书名> <新书名>
+   ```
+
+漏改任一处，CI 仍会绿（`build --strict` 通过、Pages 部署成功），但站点 nav 不会显示新书——触发"Push 看似成功但站点没更新"陷阱。这两条契约 CI 不会自动检查，靠 worker 自觉。
+
 **验收**：
 
 - GitHub Actions run 显示绿勾。
