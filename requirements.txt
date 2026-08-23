@@ -4,7 +4,6 @@ mkdocs-material[recommended]>=9.5,<10
 pyyaml>=6.0
 
 # === 自动导航 ===
-mkdocs-awesome-nav>=3.0,<4
 mkdocs-section-index>=0.3,<0.4
 
 # === Markdown 扩展 ===

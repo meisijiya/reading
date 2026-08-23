@@ -41,9 +41,12 @@ theme:
 plugins:
   - search:
       lang: zh
-  - awesome-nav:
-      filename: INDEX.md
   - section-index
+
+nav:
+  - 首页: index.md
+  - 民法典100问: 民法典100问/INDEX.md
+  - "Vibe Coding：AI 编程时代的认知重构": "Vibe Coding：AI 编程时代的认知重构/INDEX.md"
 
 markdown_extensions:
   - admonition
