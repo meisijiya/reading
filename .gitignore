@@ -1,0 +1,39 @@
+# === 构建产物 (MkDocs) ===
+site/
+.cache/
+typings/
+
+# === Python 字节码 / 缓存 ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# === Python 虚拟环境 / 包管理 ===
+.venv/
+venv/
+env/
+.python-version
+
+# === Python 工具链缓存 ===
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# === 代码图索引(符号链接 / 目录,均不入库) ===
+.codegraph
+.codegraph/
+
+# === 本地草稿(不入版本控制) ===
+.omo/drafts/
+
+# === 编辑器 / 系统垃圾 ===
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo

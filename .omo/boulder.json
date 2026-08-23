@@ -1,0 +1,193 @@
+{
+  "schema_version": 2,
+  "active_work_id": "github-pages-8bd9078f",
+  "works": {
+    "github-pages-8bd9078f": {
+      "work_id": "github-pages-8bd9078f",
+      "active_plan": "/home/ljh2923/opencode-project/read/.omo/plans/github-pages.md",
+      "plan_name": "github-pages",
+      "status": "active",
+      "started_at": "2026-08-23T15:48:52.940Z",
+      "updated_at": "2026-08-23T16:00:39.679Z",
+      "session_ids": [
+        "opencode:ses_fd0b086c9ffe53Fa93S3AjqWqL"
+      ],
+      "session_origins": {
+        "opencode:ses_fd0b086c9ffe53Fa93S3AjqWqL": "direct"
+      },
+      "agent": "atlas",
+      "task_sessions": {
+        "todo:1": {
+          "task_key": "todo:1",
+          "task_label": "1",
+          "task_title": "`.gitignore`: 写仓库级 .gitignore 排除 site/ __pycache__/ .venv/ .codegraph/ .omo/drafts/ 等本地工件 - expect `git status` 干净",
+          "session_id": "opencode:ses_fd0af7ca1ffe4xThvBPv5PdkZp",
+          "agent": "Sisyphus-Junior",
+          "category": "quick",
+          "updated_at": "2026-08-23T15:50:42.647Z",
+          "started_at": "2026-08-23T15:50:28.307Z",
+          "status": "completed",
+          "ended_at": "2026-08-23T15:50:42.647Z",
+          "elapsed_ms": 14340
+        },
+        "todo:2": {
+          "task_key": "todo:2",
+          "task_label": "2",
+          "task_title": "`requirements.txt`: 锁 mkdocs-material[recommended]==9.* + mkdocs-awesome-nav==3.* + mkdocs-section-index==0.3.* + pymdown-extensions - expect `pip install -r` 可重现构建",
+          "session_id": "opencode:ses_fd0addd59ffeDxM6bOu6Nz91BJ",
+          "agent": "Sisyphus-Junior",
+          "category": "unspecified-low",
+          "started_at": "2026-08-23T15:51:23.209Z",
+          "status": "completed",
+          "updated_at": "2026-08-23T15:53:19.514Z",
+          "ended_at": "2026-08-23T15:53:19.514Z",
+          "elapsed_ms": 116305
+        },
+        "todo:4": {
+          "task_key": "todo:4",
+          "task_label": "4",
+          "task_title": "`docs/index.md`: 写首页（站点标题+一句话+两本书卡片：封面 URL + 标题 + 作者 + 模块数 + 速查表入口） - expect README 卡片可点入各书 INDEX",
+          "session_id": "opencode:ses_fd0ac369dffedTkLdQ3lGLRMnV",
+          "agent": "Sisyphus-Junior",
+          "category": "writing",
+          "updated_at": "2026-08-23T15:55:03.521Z",
+          "started_at": "2026-08-23T15:54:49.695Z",
+          "status": "completed",
+          "ended_at": "2026-08-23T15:55:03.521Z",
+          "elapsed_ms": 13826
+        },
+        "todo:5": {
+          "task_key": "todo:5",
+          "task_label": "5",
+          "task_title": "`AGENTS.md`: 在现有\"规则二\"之后追加\"规则三：GitHub Page 同步（github-pages-sync）\"（触发时机：book-distill 完成 push；机制：CI 自动扫描 <书名>/INDEX.md 入 nav；唯一约束：每本书必须有 INDEX.md，否则 site 章节缺失） - expect 现有\"规则一/规则二\"不被改动",
+          "session_id": "opencode:ses_fd0aaae53ffeB6YCJUV6U4cFPo",
+          "agent": "Sisyphus-Junior",
+          "category": "writing",
+          "updated_at": "2026-08-23T15:56:30.468Z",
+          "started_at": "2026-08-23T15:56:18.903Z",
+          "status": "completed",
+          "ended_at": "2026-08-23T15:56:30.468Z",
+          "elapsed_ms": 11565
+        },
+        "todo:6": {
+          "task_key": "todo:6",
+          "task_label": "6",
+          "task_title": "`design.md`: 在 worker session 中调用 `/frontend` skill 产出站点视觉/结构/交互/响应式设计文档（含设计令牌、栅格、组件清单、断点、可访问性） - expect design.md 在仓库根，可直接作为后续前端实现的依据",
+          "session_id": "opencode:ses_fd0a91acaffeslEbqvi34ouVwU",
+          "agent": "Sisyphus-Junior",
+          "category": "visual-engineering",
+          "updated_at": "2026-08-23T15:58:42.860Z",
+          "started_at": "2026-08-23T15:58:26.638Z",
+          "status": "completed",
+          "ended_at": "2026-08-23T15:58:42.860Z",
+          "elapsed_ms": 16222
+        },
+        "todo:7": {
+          "task_key": "todo:7",
+          "task_label": "7",
+          "task_title": "`.github/workflows/pages.yml`: 用 peaceiris/actions-gh-pages 或官方 mkdocs gh-deploy 动作，在 push main 时构建并发布到 GitHub Pages - expect Actions run 成功",
+          "session_id": "opencode:ses_fd0a729b5ffeWB6NEoZC5CEfuA",
+          "agent": "Sisyphus-Junior",
+          "category": "unspecified-low",
+          "updated_at": "2026-08-23T16:00:39.679Z",
+          "started_at": "2026-08-23T16:00:20.490Z",
+          "status": "completed",
+          "ended_at": "2026-08-23T16:00:39.679Z",
+          "elapsed_ms": 19189
+        }
+      }
+    }
+  },
+  "active_plan": "/home/ljh2923/opencode-project/read/.omo/plans/github-pages.md",
+  "started_at": "2026-08-23T15:48:52.940Z",
+  "status": "active",
+  "updated_at": "2026-08-23T16:00:39.679Z",
+  "session_ids": [
+    "opencode:ses_fd0b086c9ffe53Fa93S3AjqWqL"
+  ],
+  "session_origins": {
+    "opencode:ses_fd0b086c9ffe53Fa93S3AjqWqL": "direct"
+  },
+  "plan_name": "github-pages",
+  "task_sessions": {
+    "todo:1": {
+      "task_key": "todo:1",
+      "task_label": "1",
+      "task_title": "`.gitignore`: 写仓库级 .gitignore 排除 site/ __pycache__/ .venv/ .codegraph/ .omo/drafts/ 等本地工件 - expect `git status` 干净",
+      "session_id": "opencode:ses_fd0af7ca1ffe4xThvBPv5PdkZp",
+      "agent": "Sisyphus-Junior",
+      "category": "quick",
+      "updated_at": "2026-08-23T15:50:42.647Z",
+      "started_at": "2026-08-23T15:50:28.307Z",
+      "status": "completed",
+      "ended_at": "2026-08-23T15:50:42.647Z",
+      "elapsed_ms": 14340
+    },
+    "todo:2": {
+      "task_key": "todo:2",
+      "task_label": "2",
+      "task_title": "`requirements.txt`: 锁 mkdocs-material[recommended]==9.* + mkdocs-awesome-nav==3.* + mkdocs-section-index==0.3.* + pymdown-extensions - expect `pip install -r` 可重现构建",
+      "session_id": "opencode:ses_fd0addd59ffeDxM6bOu6Nz91BJ",
+      "agent": "Sisyphus-Junior",
+      "category": "unspecified-low",
+      "started_at": "2026-08-23T15:51:23.209Z",
+      "status": "completed",
+      "updated_at": "2026-08-23T15:53:19.514Z",
+      "ended_at": "2026-08-23T15:53:19.514Z",
+      "elapsed_ms": 116305
+    },
+    "todo:4": {
+      "task_key": "todo:4",
+      "task_label": "4",
+      "task_title": "`docs/index.md`: 写首页（站点标题+一句话+两本书卡片：封面 URL + 标题 + 作者 + 模块数 + 速查表入口） - expect README 卡片可点入各书 INDEX",
+      "session_id": "opencode:ses_fd0ac369dffedTkLdQ3lGLRMnV",
+      "agent": "Sisyphus-Junior",
+      "category": "writing",
+      "updated_at": "2026-08-23T15:55:03.521Z",
+      "started_at": "2026-08-23T15:54:49.695Z",
+      "status": "completed",
+      "ended_at": "2026-08-23T15:55:03.521Z",
+      "elapsed_ms": 13826
+    },
+    "todo:5": {
+      "task_key": "todo:5",
+      "task_label": "5",
+      "task_title": "`AGENTS.md`: 在现有\"规则二\"之后追加\"规则三：GitHub Page 同步（github-pages-sync）\"（触发时机：book-distill 完成 push；机制：CI 自动扫描 <书名>/INDEX.md 入 nav；唯一约束：每本书必须有 INDEX.md，否则 site 章节缺失） - expect 现有\"规则一/规则二\"不被改动",
+      "session_id": "opencode:ses_fd0aaae53ffeB6YCJUV6U4cFPo",
+      "agent": "Sisyphus-Junior",
+      "category": "writing",
+      "updated_at": "2026-08-23T15:56:30.468Z",
+      "started_at": "2026-08-23T15:56:18.903Z",
+      "status": "completed",
+      "ended_at": "2026-08-23T15:56:30.468Z",
+      "elapsed_ms": 11565
+    },
+    "todo:6": {
+      "task_key": "todo:6",
+      "task_label": "6",
+      "task_title": "`design.md`: 在 worker session 中调用 `/frontend` skill 产出站点视觉/结构/交互/响应式设计文档（含设计令牌、栅格、组件清单、断点、可访问性） - expect design.md 在仓库根，可直接作为后续前端实现的依据",
+      "session_id": "opencode:ses_fd0a91acaffeslEbqvi34ouVwU",
+      "agent": "Sisyphus-Junior",
+      "category": "visual-engineering",
+      "updated_at": "2026-08-23T15:58:42.860Z",
+      "started_at": "2026-08-23T15:58:26.638Z",
+      "status": "completed",
+      "ended_at": "2026-08-23T15:58:42.860Z",
+      "elapsed_ms": 16222
+    },
+    "todo:7": {
+      "task_key": "todo:7",
+      "task_label": "7",
+      "task_title": "`.github/workflows/pages.yml`: 用 peaceiris/actions-gh-pages 或官方 mkdocs gh-deploy 动作，在 push main 时构建并发布到 GitHub Pages - expect Actions run 成功",
+      "session_id": "opencode:ses_fd0a729b5ffeWB6NEoZC5CEfuA",
+      "agent": "Sisyphus-Junior",
+      "category": "unspecified-low",
+      "updated_at": "2026-08-23T16:00:39.679Z",
+      "started_at": "2026-08-23T16:00:20.490Z",
+      "status": "completed",
+      "ended_at": "2026-08-23T16:00:39.679Z",
+      "elapsed_ms": 19189
+    }
+  },
+  "agent": "atlas"
+}
