@@ -1,0 +1,723 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://meisijiya.github.io/reading/Vibe%20Coding%EF%BC%9AAI%20%E7%BC%96%E7%A8%8B%E6%97%B6%E4%BB%A3%E7%9A%84%E8%AE%A4%E7%9F%A5%E9%87%8D%E6%9E%84/01-%E8%B5%B0%E8%BF%91VibeCoding/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>模块一 走近Vibe Coding（第1部分 + 导读） - 读书知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vibe-coding1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="读书知识库" class="md-header__button md-logo" aria-label="读书知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            读书知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              模块一 走近Vibe Coding（第1部分 + 导读）
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到暗色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到暗色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到亮色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到亮色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/meisijiya/reading" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E6%B0%91%E6%B3%95%E5%85%B8100%E9%97%AE/INDEX/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  民法典100问
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../INDEX/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Vibe Coding：AI 编程时代的认知重构
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="读书知识库" class="md-nav__button md-logo" aria-label="读书知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    读书知识库
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/meisijiya/reading" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%B0%91%E6%B3%95%E5%85%B8100%E9%97%AE/INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    民法典100问
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vibe Coding：AI 编程时代的认知重构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        导读·内容提要与推荐序（前置材料合卡）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vibe-coding1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        什么是Vibe Coding？（第1章）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        若AI取代初级程序员，那高级程序员从何而来？（第2章）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        在AI之前，你们都是手敲代码的吗？（第3章）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vibe-coding-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vibe Coding 最信达雅的翻译是什么？（第4章）
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/meisijiya/reading/edit/master/docs/Vibe Coding：AI 编程时代的认知重构/01-走近VibeCoding/README.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="vibe-coding1">模块一 走近Vibe Coding（第1部分 + 导读）<a class="headerlink" href="#vibe-coding1" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>卡片结构：📖原文＝微信读书热门划线逐字引用（含标记人数）｜🧭归纳＝编者从上述原文提炼，不冒充原文。</p>
+</blockquote>
+<h2 id="_1">导读·内容提要与推荐序（前置材料合卡）<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>章节: 内容提要、推荐序1、推荐序3、推荐序4、前言、本书组织结构｜章节UID: 3,4,6,7,9,10｜热门划线: 22条</li>
+</ul>
+<p><strong>【内容提要】</strong></p>
+<blockquote>
+<p>📖 <strong>原文</strong>（34人标记）：Vibe Coding作为一种新兴的编程范式，借助人工智能技术，允许开发者通过自然语言与AI协作，将脑海中的想法轻松转化为代码。</p>
+</blockquote>
+<p><strong>【推荐序1】</strong></p>
+<blockquote>
+<p>📖 <strong>原文</strong>（108人标记）：真正的Vibe Coding实践者，无一不善于运用上下文工程（Context Engineering）构建与AI的精准对话，将严谨的规划与思考融入每一次交互，让AI成为自己思想的延伸，而不是混乱的替代</p>
+<p>📖 <strong>原文</strong>（51人标记）：这并非简单的工具更替，而是一场深刻的认知革命，它正在重塑我们与机器的协作方式，重新定义“程序员”这一身份的内涵与边界</p>
+<p>📖 <strong>原文</strong>（51人标记）：大语言模型与Vibe Coding正在重新定义开发者的能力和职责边界，未来的开发者，需要有能力驾驭这个时代最先进的生产力</p>
+</blockquote>
+<p><strong>【推荐序3】</strong></p>
+<blockquote>
+<p>📖 <strong>原文</strong>（66人标记）：我一直提倡在大模型时代全面实施测试驱动的开发（TDD），而TDD也可以和Vibe Coding有机地融合起来，即TDD为Vibe Coding这匹思想的骏马配上了“质量”缰绳。</p>
+<p>📖 <strong>原文</strong>（66人标记）：它告诉我们，未来优秀工程师的价值，不再仅体现于能写出多么精巧的代码，更在于能否提出正确问题、清晰定义“完成”标准、构建人机协作的宏观框架。</p>
+<p>📖 <strong>原文</strong>（36人标记）：将开发者最宝贵的、基于经验的“感觉”——对业务的深刻理解、对用户场景的精准直觉、对系统边界的模糊感知——通过高效的人机交互传递给AI，由AI完成繁重的、具体的编码实现。</p>
+<p>📖 <strong>原文</strong>（26人标记）：是开发角色的升维：开发者从代码的“生产者”，转变为代码意图的“导演”与代码质量的“验收官”。</p>
+<p>📖 <strong>原文</strong>（22人标记）：正是软件工程3.0时代中，“开发”这一核心环节的全新图景。它为我们描绘了开发者如何驾驭AI这个强大的“外部大脑”，将工作重心聚焦于更具创造性的高阶认知活动上。</p>
+<p>📖 <strong>原文</strong>（20人标记）：我们既兴奋于生产力的空前解放，也焦虑于自身价值的重新定义：我们赖以自豪的编码技艺，在看似无所不能的AI面前，边界在何方？我们未来的核心竞争力，又将是什么？这已成为整个行业必须直面的“时代之问”。</p>
+</blockquote>
+<p><strong>【推荐序4】</strong></p>
+<blockquote>
+<p>📖 <strong>原文</strong>（96人标记）：未来软件厂商可将软件部分模块的扩展权和定义权开放给普通用户，让大家通过氛围编程对软件进行二次加工和个性化定制。得益于自然语言编程的低门槛，人人都可以参与到这样的软件二次创作中</p>
+<p>📖 <strong>原文</strong>（40人标记）：软件未来应该像文档一样可以随时编辑。</p>
+<p>📖 <strong>原文</strong>（28人标记）：这不仅可能会带来颠覆式的软件交付和生产方式变革，更将开启一个全民用自然语言实现软件创造的平权时代。</p>
+<p>📖 <strong>原文</strong>（22人标记）：传统软件开发因成本高昂，曾让无数个性化需求被压抑。</p>
+</blockquote>
+<p><strong>【前言】</strong></p>
+<blockquote>
+<p>📖 <strong>原文</strong>（96人标记）：“代码明明是手写的，为什么很多程序被称为脚本呢？” “因为它要RUN起来。”</p>
+<p>📖 <strong>原文</strong>（72人标记）：每次交互都遵循马尔可夫链</p>
+<p>📖 <strong>原文</strong>（52人标记）：正是要理解和适应大语言模型的能力、缺点与习性，找到将AI这一强有力的拼图嵌入日常的软件开发和需求实现的方法。</p>
+<p>📖 <strong>原文</strong>（40人标记）：2022年大模型热潮来临前，我养了一只可爱的小型犬。经过这3年与小狗和大模型的朝夕相处，我发现大模型的行为太像小狗了，总结下来有以下6个特征。</p>
+<p>📖 <strong>原文</strong>（32人标记）：提示词成了新的“代码”，大模型则扮演起“编译器”的角色</p>
+<p>📖 <strong>原文</strong>（28人标记）：但与此同时，也有研究指出，人机协作效率可能会不增反降：大量开发者盲目依赖AI，“一句话需求”正在威胁多年积累的软件工程体系。</p>
+<p>📖 <strong>原文</strong>（26人标记）：代码一定要手写吗？</p>
+</blockquote>
+<p><strong>【本书组织结构】</strong></p>
+<blockquote>
+<p>📖 <strong>原文</strong>（36人标记）：参考网上最新的技术博客、开源工程，或向真正的Vibe Coding实践者“取经”。</p>
+</blockquote>
+<ul>
+<li>ℹ️ 本卡合并目录中的前置材料：内容提要(uid3)、推荐序1(uid4)、推荐序3(uid6)、推荐序4(uid7)、前言(uid9)、本书组织结构(uid10)。推荐序2(uid5)、封面、版权信息、作者简介无热门划线。</li>
+</ul>
+<blockquote>
+<p>🧭 <strong>归纳</strong>：全书定位：Vibe Coding 是借助AI、通过自然语言协作将想法转化为代码的新兴编程范式。推荐序的核心共识——真正的实践者善用上下文工程，把严谨的规划融入每次交互；TDD 可为 Vibe Coding 配上『质量缰绳』；开发者从代码生产者升维为意图导演与质量验收官；未来软件可像文档一样随时编辑，开启自然语言创造的平权时代。前言定调：提示词成了新的『代码』，大模型扮演『编译器』；同时警惕盲目依赖AI让效率不增反降。</p>
+</blockquote>
+<h2 id="vibe-coding1_1">什么是Vibe Coding？（第1章）<a class="headerlink" href="#vibe-coding1_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>章节: 第1章 什么是Vibe Coding｜章节UID: 12｜热门划线: 20条</li>
+</ul>
+<blockquote>
+<p>📖 <strong>原文</strong>（153人标记）：但在Vibe Coding的时代，你可能只需要拿出手机，对着AI说：“帮我做一个应用，用户可以拍照上传冰箱里的食材，然后自动分析这些食材并推荐合适的菜谱，包括制作步骤和营养信息。”</p>
+<p>📖 <strong>原文</strong>（153人标记）：Vibe Coding的本质是剥离了一些“繁文缛节”和“重复机械的工序”，让人们更加专注于需求本身。</p>
+<p>📖 <strong>原文</strong>（143人标记）：这种转变的意义是深远的。它让编程从一门技术变成了一种表达方式——就像从钻研复杂的印刷术，到轻松使用文字处理器：想要创作发表一篇文章，谁还会像几百年前的古人一样，大费周章地去寻找字模，铺板印刷呢？</p>
+<p>📖 <strong>原文</strong>（136人标记）：这是一段不堪回首的经历，我不知道那天课堂上其他零基础的同学是用什么方式“背诵”全文的，我当时反正是路易十六上刑场——摸不着头脑。</p>
+<p>📖 <strong>原文</strong>（135人标记）：如此陡峭的学习曲线，如此延迟的正反馈满足感，引无数初学者折腰，将诸多创意灵感拒之门外。</p>
+<p>📖 <strong>原文</strong>（117人标记）：所谓的越自律越自由，想要更加智能化、快速化地实现开发目标，就越需要规范和文档来约束AI的不确定性</p>
+<p>📖 <strong>原文</strong>（112人标记）：Vibe毕竟是个舶来词，要强行音译的话，我很担心被人翻译成“外包”，这就远远偏离了Vibe所要表达的意境。</p>
+<p>📖 <strong>原文</strong>（84人标记）：很明显，我们目前还处于“编码氛围”和“应用氛围”阶段之间，但是相较于几年前的“古法”编程已经有了划时代的进步，最近两年刚接触编程的新朋友已经成为AI编码时代的“原住民”</p>
+<p>📖 <strong>原文</strong>（78人标记）：Spec表示“先计划后开发”，即通过编写严格的需求文档、设计文档并确认步骤制定计划，然后再启动编码步骤。</p>
+<p>📖 <strong>原文</strong>（77人标记）：开发者通过自然语言与AI（如大语言模型）对话，AI负责生成和优化代码，开发者则专注于描述需求和目标，而不再手写每一行代码或深入底层实现。</p>
+<p>📖 <strong>原文</strong>（75人标记）：但要注意的是，现阶段的氛围编程不是在轻松而无知的氛围中随意编程，而是在有想法和编程基础的前提下享受沉浸加速的氛围感。</p>
+<p>📖 <strong>原文</strong>（68人标记）：当然，上面举的例子现在还没有成为现实。</p>
+<p>📖 <strong>原文</strong>（55人标记）：经长期实践验证，20 tps的模型输出速度会给人带来明显的迟滞感，60 tps可满足高效需求。当速度达到40 tps及以上时，开发者对于模型速度的感知差异趋于弱化，这大致相当于每秒生成5行代码的效率。</p>
+<p>📖 <strong>原文</strong>（54人标记）：Vibe Coding的出现彻底颠覆了这一切，它的核心理念是“完全沉浸于氛围中，拥抱指数级增长，甚至忘记代码的存在”</p>
+<p>📖 <strong>原文</strong>（51人标记）：2025年2月，AI届的知名大V、OpenAI联合创始人、前特斯拉AI负责人Andrej Karpathy在社交媒体上首次使用了Vibe Coding一词</p>
+<p>📖 <strong>原文</strong>（48人标记）：它解放了开发者和创意拥有者的生产力</p>
+<p>📖 <strong>原文</strong>（48人标记）：以需求高质量、高速度落地为核心目标，充分体验并摸清全球顶尖代码模型的能力边界，选对用好适合自己的AI编码工具，践行最前沿的上下文工程理念，转变思路，突破全栈。</p>
+<p>📖 <strong>原文</strong>（48人标记）：AI编码从最初的Prompt Engineering（提示词工程）到现在定义更广的Context Engineering（上下文工程）</p>
+<p>📖 <strong>原文</strong>（48人标记）：强大的代码工程索引技术、快速准确的上下文召回，在幕后为Vibe Coding的效果筑牢了根基。</p>
+<p>📖 <strong>原文</strong>（48人标记）：也许在工期不紧时，在想要了解AI编码时，在AI生成代码的间隙，你能翻开本书读上几页，并有一些小小的收获</p>
+<p>🧭 <strong>归纳</strong>：Karpathy 于2025年2月首创该词。核心理念：完全沉浸于氛围，拥抱指数级增长，甚至忘记代码的存在；本质是剥离繁文缛节与重复机械工序，专注需求本身。Spec 模式=先计划后开发（严格需求/设计文档+确认步骤）。越自律越自由：越想智能化快速化，就越需要规范和文档约束AI的不确定性。现阶段不是轻松无知的随意编程，而是在有想法和编程基础的前提下享受沉浸加速。速度基准：20tps 明显迟滞感、40tps 以上感知差异趋弱、60tps 满足高效需求（≈每秒5行代码）。范式从 Prompt Engineering 演进到 Context Engineering，代码工程索引与上下文召回是幕后根基。</p>
+</blockquote>
+<h2 id="ai2">若AI取代初级程序员，那高级程序员从何而来？（第2章）<a class="headerlink" href="#ai2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>章节: 第2章 若AI取代初级程序员，那高级程序员从何而来｜章节UID: 13｜热门划线: 20条</li>
+</ul>
+<blockquote>
+<p>📖 <strong>原文</strong>（240人标记）：很多公司反而倾向于招聘年龄较大的经验型程序员，因为AI放大了他们的经验价值，并且弥补了时间和体力上的不足。</p>
+<p>📖 <strong>原文</strong>（144人标记）：时代浪潮滚滚向前，不会因任何人的垂青而停留，也不会因某个行业的怜悯而驻足。所谓浪花淘尽英雄，只有适应时代的发展，提升自己的学习能力，才能成为临江之仙。</p>
+<p>📖 <strong>原文</strong>（130人标记）：若AI取代初级程序员，那高级程序员从何而来</p>
+<p>📖 <strong>原文</strong>（117人标记）：古人云“相由心生”，AI如同工程师的“镜像”，只有提升自己的软件工程素养、代码品位和技术追求，我们才能在AI时代下“好风凭借力”</p>
+<p>📖 <strong>原文</strong>（102人标记）：在这些行业中，虽然AI能够胜任大部分环节，客观来讲甚至具备完全替代的能力，但是任何行业、任何交互，都很难被简化为单纯的知识性检索，人情味才是更重要的核心。</p>
+<p>📖 <strong>原文</strong>（102人标记）：最近流行一个梗：“一代人有一代人的错觉，我妈觉得手洗的衣服比洗衣机洗得干净，我觉得我手写的代码比AI写得规范。”</p>
+<p>📖 <strong>原文</strong>（96人标记）：阿里巴巴有一条最重要的价值观，无论价值观版本怎么迭代，它始终排在首位，那就是“客户第一”。</p>
+<p>📖 <strong>原文</strong>（91人标记）：这就回归到了代码开发的核心诉求：我们并非像创作书画作品那样追求代码的“美观”，而是将编码作为解决真实问题的手段，是要解决“人的问题”。软件开发的意义不在解题，而在“解人”。</p>
+<p>📖 <strong>原文</strong>（91人标记）：共情能力、与用户共建的能力，以及为用户打造心流体验的产品设计能力。</p>
+<p>📖 <strong>原文</strong>（85人标记）：真实的工作更多是理解业务需求、与协作者沟通，以及实现大型工程中的增删改查业务逻辑。</p>
+<p>📖 <strong>原文</strong>（84人标记）：AI大模型的介入引发的关键挑战在于：初级岗位积累基础经验的传统“学习阶梯”正在消失，那么行业该如何提供必要的实践机会，助力个人成长为中级乃至高级工程师呢？</p>
+<p>📖 <strong>原文</strong>（84人标记）：计算机行业的高薪，一定程度上源于技术门槛造成的供需失衡；当技术门槛被打破，一些低端的编码执行类工作可能被取代，行业高薪神话或将逐渐褪色、趋于平淡。</p>
+<p>📖 <strong>原文</strong>（80人标记）：从大厂的招聘动态中可以看出，公司更倾向于聘用AI时代工作不满三年的新人——他们对AI嗅觉敏锐，成长路径与AI相伴，知识结构和成长速度被AI重塑，堪称AI时代的“原住民”。</p>
+<p>📖 <strong>原文</strong>（80人标记）：我们称一位技术人员为“大牛”，不是因为他持有多少证书，而是因为他有拿得出手的产品或技术代表作</p>
+<p>📖 <strong>原文</strong>（72人标记）：从公司或团队角度看，仍需培养新人、建设人才梯队，新鲜血液的补充与校招的高性价比，都要求公司探索更有效的新人锻炼方式，新人也要在AI时代找到自己的成长路径。</p>
+<p>📖 <strong>原文</strong>（72人标记）：如果你去关注一些AI创业公司的招聘面板，就会发现一种新型的面试方式正在兴起： 你可以使用任何AI编码工具，请在N小时内完成一项独立的任务。</p>
+<p>📖 <strong>原文</strong>（68人标记）：以创业孵化为例，据Y Combinator 2025年冬季批次所披露的数据显示，25%的初创公司中，95%的代码由AI生成，即使是技术精湛的创始人也主动放弃手写代码。</p>
+<p>📖 <strong>原文</strong>（65人标记）：能否构造准确无歧义的提示词、准备充分必要的上下文，直接决定了能否用好AI提升效率。</p>
+<p>📖 <strong>原文</strong>（60人标记）：总之，精确表达需求的能力，无论是对人还是对AI，都是开发者的核心技能，只是在Vibe Coding时代更加重要、关键</p>
+<p>📖 <strong>原文</strong>（55人标记）：软件开发本身具有很强的工具属性。从宏观层面讲，软件开发就是从需求到落地的桥梁，既然是工具，就很有可能被替代。</p>
+<p>🧭 <strong>归纳</strong>：AI 放大了经验型程序员的价值（不少公司反而倾向招聘年龄较大的经验型程序员），大厂也倾向聘用成长路径与AI相伴的『AI原住民』新人。关键挑战：初级岗位积累基础经验的传统『学习阶梯』正在消失，行业必须探索新的实践机会与新人锻炼方式。新型面试兴起：可用任何AI工具、N小时内完成一项独立任务。数据锚点：YC 2025冬季批次25%初创公司95%代码由AI生成。核心论断：软件开发的意义不在解题而在『解人』——共情能力、与用户共建、打造心流体验；精确表达需求是对人对AI共同的核心技能；技术门槛被打破后行业高薪神话或将褪色。『大牛』的标志是有拿得出手的产品或技术代表作。</p>
+</blockquote>
+<h2 id="ai3">在AI之前，你们都是手敲代码的吗？（第3章）<a class="headerlink" href="#ai3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>章节: 第3章 在AI之前，你们都是手敲代码的吗｜章节UID: 14｜热门划线: 20条</li>
+</ul>
+<blockquote>
+<p>📖 <strong>原文</strong>（108人标记）：人和人的沟通，有时候没有用</p>
+<p>📖 <strong>原文</strong>（91人标记）：相信这一天不会太远，短则半年，长则两年，终将到来。</p>
+<p>📖 <strong>原文</strong>（84人标记）：没有一个需求是不变的。</p>
+<p>📖 <strong>原文</strong>（77人标记）：但这其实是个伪命题，毕竟没有哪个产品经理能在一开始就洞悉终态，把开发需要实现的每一个产品细节都描述清楚。</p>
+<p>📖 <strong>原文</strong>（72人标记）：你觉得AI能通过由0和1组成的二进制机器语言生成应用吗？</p>
+<p>📖 <strong>原文</strong>（54人标记）：当我们总结方法论时，核心是将方法论用于指导实践——先思考，谋定而后动。</p>
+<p>📖 <strong>原文</strong>（52人标记）：编程语言的进化史，本质上是人类与机器沟通方式的迭代史——从最初直接与硬件对话的二进制指令，到如今接近自然语言的抽象表达，每一次演变都伴随着对“效率”与“易用性”的平衡。</p>
+<p>📖 <strong>原文</strong>（48人标记）：看似理所当然，但在两年前，研究者们还在苦思无门</p>
+<p>📖 <strong>原文</strong>（48人标记）：是的，新人朋友，那时候没有大模型，我们真的是手敲代码，最大的效率提升就是按Ctrl+C之后按Ctrl+V。</p>
+<p>📖 <strong>原文</strong>（45人标记）：只有当AI把人类视为辅助角色或是低频沟通的“甲方”，并且AI能够持续编码一天以上，具备自主的迭代和判断意识，能面向目标自驱地完成任务时，才算真正进入Agent形态。</p>
+<p>📖 <strong>原文</strong>（40人标记）：从世界各地的科技创业者口中听到最多的词就是fail fast（快速失败），其核心是速度致胜</p>
+<p>📖 <strong>原文</strong>（39人标记）：在AI之前，你们都是手敲代码的吗</p>
+<p>📖 <strong>原文</strong>（36人标记）：从高维抽象的角度来看，自然语言既实现了语法层的抽象，也实现了问题层的抽象，它用高维计算空间破解不同语法元素之间的联系</p>
+<p>📖 <strong>原文</strong>（36人标记）：我除了阿里巴巴绩效外，看到最多“3.5”的地方。 </p>
+<p>📖 <strong>原文</strong>（36人标记）：比如，一位位于中国西安的青年与一位位于地球对拓点的阿根廷布宜诺斯艾利斯的姑娘，他们语言不通、从未见面，用数学的方式描述就是余弦相似度接近于0。</p>
+<p>📖 <strong>原文</strong>（36人标记）：看似原始，但这其实只是2～3年前的真实现状。</p>
+<p>📖 <strong>原文</strong>（36人标记）：在本地部署一个小模型，或者通过规则动态地强化学习用户的历史偏好，都是非常不错的选择。</p>
+<p>📖 <strong>原文</strong>（34人标记）：因此，自然语言不是编程语言代系的横向扩展，而是向更上层的扩展。</p>
+<p>📖 <strong>原文</strong>（34人标记）：这里用embedding（嵌入）知识尝试解释：大模型接收输入文本后，会先做tokenize（分词），再转成词向量供模型理解。</p>
+<p>📖 <strong>原文</strong>（32人标记）：比如五代十国中，后梁取代了唐、后唐取代了后梁，政权顺序交替且控制了中原大部</p>
+<p>🧭 <strong>归纳</strong>：编程语言的进化史本质上是人类与机器沟通方式的迭代史（二进制→汇编→高级语言→自然语言）。自然语言不是编程语言代系的横向扩展，而是向更上层的扩展——同时实现语法层抽象与问题层抽象。真实 Agent 形态四标准：①AI把人类视为辅助角色或低频沟通的『甲方』②能持续编码一天以上③具备自主迭代和判断意识④面向目标自驱完成任务。方法论核心=先思考谋定而后动；没有需求是不变的，没人能一开始洞悉终态；创业者信条 fail fast 速度制胜。</p>
+</blockquote>
+<h2 id="vibe-coding-4">Vibe Coding 最信达雅的翻译是什么？（第4章）<a class="headerlink" href="#vibe-coding-4" title="Permanent link">&para;</a></h2>
+<ul>
+<li>章节: 第4章 Vibe Coding最信达雅的翻译是什么｜章节UID: 15｜热门划线: 14条</li>
+</ul>
+<blockquote>
+<p>📖 <strong>原文</strong>（156人标记）：不要在AI Vibe Coding的时候玩手机！</p>
+<p>📖 <strong>原文</strong>（90人标记）：当代码实现不再是局限时，我们应将重心更多地放在用户需求洞察、市场调研、产品设计和商业模式上。</p>
+<p>📖 <strong>原文</strong>（70人标记）：尤其是购买了昂贵的月付会员后，更希望这些“赛博牛马”能007般地工作。</p>
+<p>📖 <strong>原文</strong>（68人标记）：我们真正该掌握的，是让大众生活更加幸福的需求解决权。</p>
+<p>📖 <strong>原文</strong>（60人标记）：开发者可以用日常语言描述需求，AI理解并转化为可执行的代码。这是最重要、最核心、最颠覆的能力，</p>
+<p>📖 <strong>原文</strong>（50人标记）：氛围编程”只能算是Vibe Coding的直译，要论信达雅，我觉得“灵码”这个翻译颇为贴切——它传递出一种灵感迸发的氛围感。</p>
+<p>📖 <strong>原文</strong>（44人标记）：Vibe Coding并不是让人类忽略代码质量与现实需求，持续高速地生成垃圾代码，而是要带着时代赐予的高效工具去创造</p>
+<p>📖 <strong>原文</strong>（40人标记）：如今在Vibe Coding中，AI就是你的赛博员工，你苦心孤诣编写的提示词、构造的上下文，就是你的“祈祷愿词”。</p>
+<p>📖 <strong>原文</strong>（36人标记）：不再受语法和实现细节的束缚，可以专注于更高层次的设计与创意。大多数时候无须纠结代码如何实现，而是要让产品思路和商业模式跟上AI的速度。</p>
+<p>📖 <strong>原文</strong>（36人标记）：AI本质上是基于上下文理解生成高概率token序列的工具，而操作它的人类，才是最应该对AI生成质量负主要责任的主体</p>
+<p>📖 <strong>原文</strong>（22人标记）：有句俗语是“吃啥补啥”，计算机领域也有句著名的俗语——garbage in, garbage out。我们只有构造更高质量的上下文输入，才能让AI能够持续写出高质量的代码</p>
+<p>📖 <strong>原文</strong>（22人标记）：不谈浓度谈毒性就是耍流氓，不加限定词就做判断也是耍流氓。当AI能力足够强，人人都能体验氛围编程时，“祈祷式编程”就会变成中性词，变得理所当然</p>
+<p>📖 <strong>原文</strong>（20人标记）：别让“氛围感”变成了“粪围感”。</p>
+<p>📖 <strong>原文</strong>（20人标记）：同时期也有不少资深程序员抱残守缺，抵触这一新生事物；</p>
+<p>🧭 <strong>归纳</strong>：译名之辩：『氛围编程』只是直译，作者认为『灵码』更传神（灵感迸发的氛围感）。最核心最颠覆的能力=用日常语言描述需求，AI 理解并转化为可执行代码。garbage in, garbage out——只有构造更高质量的上下文输入，AI 才能持续写出高质量代码；操作 AI 的人类才是对生成质量负主要责任的主体。Vibe Coding 不是持续高速生成垃圾代码，而是带着高效工具去创造；重心应转向用户需求洞察、市场调研、产品设计和商业模式。纪律底线：不要在 AI 编码时玩手机！</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
