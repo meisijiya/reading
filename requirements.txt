@@ -8,3 +8,6 @@ mkdocs-section-index>=0.3,<0.4
 
 # === Markdown 扩展 ===
 pymdown-extensions>=10.0
+ebooklib>=0.18
+beautifulsoup4>=4.12
+lxml>=5.0

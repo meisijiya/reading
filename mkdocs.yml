@@ -47,6 +47,7 @@ nav:
   - 首页: index.md
   - 民法典100问: 民法典100问/INDEX.md
   - "Vibe Coding：AI 编程时代的认知重构": "Vibe Coding：AI 编程时代的认知重构/INDEX.md"
+  - "Claude Code橙皮书：AI编程实战 (花叔)": "Claude Code橙皮书：AI编程实战 (花叔)/INDEX.md"
 
 markdown_extensions:
   - admonition

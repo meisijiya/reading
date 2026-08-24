@@ -99,3 +99,21 @@ export WEREAD_API_KEY=$(grep -oP 'WEREAD_API_KEY=\K\S+' ~/.bashrc | tail -1)
 
 **风险**：worker 蒸馏新书忘建 INDEX.md → CI 失败、站点不更新。新人/AI 务必遵守规则一的目录模板，别图省事跳过导航入口这一步。
 
+## 规则四：本地电子书蒸馏（epub-distill）
+
+**触发**：用户提供 epub 文件，要求做读书笔记 / 蒸馏 / 整理知识包（共享规则一目录模板，但数据源是本地 epub 而非微信读书接口）。
+
+1. **取数（epub 来源 + ebooklib 解析）** — Python `ebooklib`：`book = epub.read_epub('x.epub')`；目录递归 `book.toc` 取 NCX level 1 节点（标题为「第N章」/`Chapter N`/`卷N`）；原文用 `chapter.get_content()` 逐节点写 `00-原书档案/fulltext/<uid>.md`（一个 level-1 节点一文件，uid 编号做稳定锚点）。元数据 `book.metadata` 落 `book-meta.json`。epub 无 bestbookmarks 接口——`hot-highlights.json` 与 `fulltext/` 合流，原文即权威。
+
+2. **通读（拿到完整 fulltext 后方可动笔）** — 必须等全部 `fulltext/*.md` 落盘、NCX level 1 节点总数对得上 `book.toc` 顶层数后方可提炼；提炼层只能从原文归纳，禁止凭模型常识编造"书中观点"；不做摘要式压缩，丢上下文等于没读。
+
+3. **建包（沿用规则一目录模板；fulltext 粒度 = NCX level 1 `第N章`）** — 目录结构完全复用规则一：`INDEX.md` + `00-原书档案/`（book-meta.json / toc.md / fulltext/<uid>.md）+ `NN-<模块名>/README.md` 每章一卡 + `99-速查表.md` + `additions/`。fulltext 粒度 = 一个 NCX level 1 章节一个文件，每张卡片对应一个 chapter，sha256 三处一致（原文文件 / 卡片引用块 / 速查表锚点）。
+
+4. **三级标记（📖原文含 §N.M · uid NN 定位 / 🧭归纳 / ➕补充 — 沿用规则一，无热度括号）** — 📖原文＝逐字引用并附 `§N.M`（章节内小节）+ `uid NN`（fulltext 文件编号）双锚点；🧭归纳＝从原文提炼；➕补充＝编者依据公开常识。无热度标记（heat 是 weread 专属，epub 不存在）。
+
+**覆盖率声明（epub 包 = 100%；不存在半覆盖；如未来 weread API 包与 epub 包混站，INDEX.md 必须各自声明）** — epub 包覆盖度天然 100%：`fulltext/` 即原书全部正文。INDEX.md 顶部照规则一样板声明即可。仓库以后若 weread 来源书与 epub 来源书并存，每本书在自己 INDEX.md 内明示数据源（接口 / 本地 epub），不互相冒充。
+
+**验收（path 一致 / 切粒一致 / sha256 三处一致 / 各 NN-部/README 总卡 == toc.md 章节数 / fulltext 抽样 verbatim 命中）** — ① `00-原书档案/book-meta.json` 存在且字段齐；② `fulltext/` 文件数 == `book.toc` 顶层 NCX level 1 节点数；③ sha256 在原文文件、卡片引用块、速查表三处完全一致；④ 各 `NN-部/README.md` 问题卡总数 == `toc.md` 章节数（逐一对账，规则一通行口径）；⑤ 每个 fulltext 文件抽样一句对照原文 verbatim 命中（人工 grep 验）。
+
+**增量维护**：与规则一一致——用户新内容追加到 `additions/YYYY-MM-DD-主题.md`，不改原文档案；与既有规则冲突时在 additions 里写明理由，保留演化历史；AI 检索时 additions 与速查表同优先级，标注了"影响"的条目覆盖速查表对应旧条目。
+

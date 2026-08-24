@@ -51,6 +51,22 @@
     [速查表](./Vibe%20Coding%EF%BC%9AAI%20%E7%BC%96%E7%A8%8B%E6%97%B6%E4%BB%A3%E7%9A%84%E8%AE%A4%E7%9F%A5%E9%87%8D%E6%9E%84/99-速查表.md){ .md-button }
     [从走近 Vibe Coding 开始](./Vibe%20Coding%EF%BC%9AAI%20%E7%BC%96%E7%A8%8B%E6%97%B6%E4%BB%A3%E7%9A%84%E8%AE%A4%E7%9F%A5%E9%87%8D%E6%9E%84/01-走近VibeCoding/README.md){ .md-button }
 
+- :material-code-braces:{ .lg .middle } **《Claude Code橙皮书：AI编程实战》**
+
+    ---
+
+    花叔 · 本地 epub 一次性落档 · 2025-2026 时效内容
+
+    4 大部分 / 14 个核心章节，从 Claude Code 的独特价值定位、10 分钟起步安装，到 CLAUDE.md / Skill / Hook / MCP 扩展机制与多智能体协作，再到 Chrome 扩展 / 内容创作自动化 / App Store 上架三个完整产品实战，构建 AI 编程时代完整工作流。
+
+    :material-bookmark-multiple: **模块数**: 4
+    :material-format-list-numbered: **章节数**: 14
+    :material-thermometer: **覆盖率**: 100% epub 落档
+
+    [进入 INDEX](./Claude%20Code橙皮书%EF%BC%9AAI%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98%20(%E8%8A%B1%E5%8F%94)/INDEX.md){ .md-button }
+    [速查表](./Claude%20Code橙皮书%EF%BC%9AAI%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98%20(%E8%8A%B1%E5%8F%94)/99-速查表.md){ .md-button }
+    [从第一部分开始](./Claude%20Code橙皮书%EF%BC%9AAI%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98%20(%E8%8A%B1%E5%8F%94)/01-第一部分/README.md){ .md-button }
+
 </div>
 
 ## 知识包结构
