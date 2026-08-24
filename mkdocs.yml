@@ -16,6 +16,7 @@ theme:
     - navigation.sections
     - navigation.indexes
     - navigation.top
+    - navigation.footer
     - search.suggest
     - search.highlight
     - content.code.copy
@@ -45,9 +46,29 @@ plugins:
 
 nav:
   - 首页: index.md
-  - 民法典100问: 民法典100问/INDEX.md
-  - "Vibe Coding：AI 编程时代的认知重构": "Vibe Coding：AI 编程时代的认知重构/INDEX.md"
-  - "Claude Code橙皮书：AI编程实战 (花叔)": "Claude Code橙皮书：AI编程实战 (花叔)/INDEX.md"
+  - 民法典100问:
+    - 民法典100问/INDEX.md
+    - 民法典100问/01-总则编/README.md
+    - 民法典100问/02-物权编/README.md
+    - 民法典100问/03-合同编/README.md
+    - 民法典100问/04-人格权编/README.md
+    - 民法典100问/05-婚姻家庭编/README.md
+    - 民法典100问/06-继承编/README.md
+    - 民法典100问/07-侵权责任编/README.md
+    - 民法典100问/99-速查表.md
+  - "Vibe Coding：AI 编程时代的认知重构":
+    - "Vibe Coding：AI 编程时代的认知重构/INDEX.md"
+    - "Vibe Coding：AI 编程时代的认知重构/01-走近VibeCoding/README.md"
+    - "Vibe Coding：AI 编程时代的认知重构/02-如何VibeCoding/README.md"
+    - "Vibe Coding：AI 编程时代的认知重构/03-VibeCoding的未来/README.md"
+    - "Vibe Coding：AI 编程时代的认知重构/99-速查表.md"
+  - "Claude Code橙皮书：AI编程实战 (花叔)":
+    - "Claude Code橙皮书：AI编程实战 (花叔)/INDEX.md"
+    - "Claude Code橙皮书：AI编程实战 (花叔)/01-第一部分/README.md"
+    - "Claude Code橙皮书：AI编程实战 (花叔)/02-第二部分/README.md"
+    - "Claude Code橙皮书：AI编程实战 (花叔)/03-第三部分/README.md"
+    - "Claude Code橙皮书：AI编程实战 (花叔)/04-第四部分/README.md"
+    - "Claude Code橙皮书：AI编程实战 (花叔)/99-速查表.md"
 
 markdown_extensions:
   - admonition
