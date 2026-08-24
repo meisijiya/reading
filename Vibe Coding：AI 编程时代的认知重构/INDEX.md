@@ -52,8 +52,8 @@ Vibe Coding：AI 编程时代的认知重构/
 
 **给 AI 的检索建议**：
 1. 先查 `99-速查表.md` 定位场景/概念 → 再回对应模块 README 读原文证据链
-2. 按 Q 编号 grep（如 `Q06`）可直接命中卡片；卡片头部含章节 UID 可回溯 `hot-highlights.json`
-3. 需要精确出处时查 `hot-highlights.json` 的 `range` 字段（章节内字符偏移）；heat（标记人数）= 该观点在读者群体中的共识强度
+2. 按 Q 编号 grep（如 `Q06`）可直接命中卡片；卡片头部含章节 UID 可回溯 [`hot-highlights.json`](00-原书档案/hot-highlights.json)
+3. 需要精确出处时查 [`hot-highlights.json`](00-原书档案/hot-highlights.json) 的 `range` 字段（章节内字符偏移）；heat（标记人数）= 该观点在读者群体中的共识强度
 4. 引用时严格区分 📖原文 / 🧭归纳 性质；本书观点含时效性预测（如40%自动化），引用时保留限定词
 5. 用户增量认知在 `additions/`，与速查表同优先级，标注"影响"的条目覆盖旧条目
 
