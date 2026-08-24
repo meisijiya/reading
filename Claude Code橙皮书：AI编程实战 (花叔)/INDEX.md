@@ -18,7 +18,7 @@
 | partCount | 4 |
 | 打开源文件 | `book/Claude Code橙皮书AI编程实战 (花叔) (z-library.sk, 1lib.sk, z-lib.sk).epub`（本地 epub，未发布到 GitHub Pages） |
 
-> 元数据来源：`00-原书档案/book-meta.json`（与原书 OPF + NCX 一致）。
+> 元数据来源：[`00-原书档案/book-meta.json`](00-原书档案/book-meta.json)（与原书 OPF + NCX 一致）。
 
 ## 覆盖率与数据来源声明
 
@@ -26,7 +26,7 @@
 
 | 层 | 完整度 | 来源 |
 |---|---|---|
-| 章节目录（4 部分 × 14 章） | ✅ 100% | epub NCX 解析（`toc.md`） |
+| 章节目录（4 部分 × 14 章） | ✅ 100% | epub NCX 解析（[`toc.md`](00-原书档案/toc.md)） |
 | 原书文本（14 章正文 + 119 子节） | ✅ 100% | epub fulltext（`fulltext/uid-NN-题名.md`） |
 | 方法提炼（每章卡片 + 速查表） | 由上述原文归纳 + 编者补充公开常识 | 见下方三级标记约定 |
 
