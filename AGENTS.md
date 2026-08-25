@@ -117,3 +117,28 @@ export WEREAD_API_KEY=$(grep -oP 'WEREAD_API_KEY=\K\S+' ~/.bashrc | tail -1)
 
 **增量维护**：与规则一一致——用户新内容追加到 `additions/YYYY-MM-DD-主题.md`，不改原文档案；与既有规则冲突时在 additions 里写明理由，保留演化历史；AI 检索时 additions 与速查表同优先级，标注了"影响"的条目覆盖速查表对应旧条目。
 
+## 规则五：GitHub Page 内容展示完整（github-pages-complete）
+
+**触发**：用户报"内容看不到/跳不动/看不到完整章节"等 Pages UX 问题；新书发布或重大改动后自检。
+
+**核心约束**（任一遗漏 → 站点 UX 残废）：
+
+1. **nav 段必须展开到 `NN-部/README.md`**（不是只到各书 INDEX.md）。否则侧边栏塌缩成书名一级，用户只能看到第一个模块——这就是用户最初反馈的根因。
+2. **`theme.features` 必须含 `navigation.footer`**。否则模块页底部无 Previous/Next，用户读完一个模块无路可走。
+3. **INDEX.md 速览表的"模块"列必须用 markdown 链接 `[一 XX](01-XX/README.md)`**，不是纯文本。否则表格内不可点。
+4. **epub 来源书的每张卡片"原文出处"必须用 markdown 链接 `[uid-NN-XXX](../00-原书档案/fulltext/uid-NN-XXX.md)`**。`00-原书档案/fulltext/` 已被 mkdocs build 进 site，但卡片不链 = 死入口。
+5. **INDEX.md 提及的归档文件路径**（`toc.md` / `book-meta.json` / `hot-highlights.json` / `toc.json`）**用 markdown 链接**，让"AI 检索建议"段落也成可点击入口。
+6. **相对路径正确**：模块 README 在 `NN-部/` 子目录，链接归档要 `../00-原书档案/...`；INDEX.md 在书根但被生成到 `INDEX/index.html`，mkdocs 自动加 `../`（不写错就行）。中文文件名里 `"` 和 `"` 是不同字符（U+0022 ≠ U+201C/U+201D），写错会导致 strict build WARNING。
+7. **`mkdocs build --strict` 必须零警告通过才允许 push**。有 WARNING = 有死链。
+
+**验收**（push 前必跑）：
+
+```bash
+mkdocs build --strict                                    # 零警告
+python3 scripts/check_site_links.py                       # 期望 OK=N/N FAIL=0
+```
+
+（可选：传本地预览地址做集成测试，如 `python3 scripts/check_site_links.py http://127.0.0.1:8765/reading`。）
+
+**自检目标**：被引用的所有 URL 100% 返回 200；nav 展开、底部 Previous/Next、速览表/卡片/归档文件链接全部可点击；epub 来源书 14 章完整原文从 INDEX 一步直达（不超 2 次跳转）。
+
