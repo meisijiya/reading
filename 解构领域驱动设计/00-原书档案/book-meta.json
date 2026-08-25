@@ -1,0 +1,17 @@
+{
+  "title": "解构领域驱动设计",
+  "creator": "张逸",
+  "sourcePath": "/home/ljh2923/opencode-project/read/book/解构领域驱动设计 (张逸) (z-library.sk, 1lib.sk, z-lib.sk).epub",
+  "fileSha256": "2132a395f1ad7108206a086d5c3d68a326215b19c7b6a763bdff39735df6f330",
+  "fileSize": 27712944,
+  "epubChapterCount": 20,
+  "epubAppendixCount": 4,
+  "epubPartIntroCount": 5,
+  "partCount": 5,
+  "tocFormat": "epub3-xhtml",
+  "identifier": "urn:uuid:3f61df05-5024-434f-bfbc-f870d98de4d2",
+  "language": "zh",
+  "publisher": "人民邮电出版社有限公司",
+  "date": "2021-08-31T16:00:00Z",
+  "description": "本书全面阐释了领域驱动设计（domain-driven design，DDD）的知识体系，内容覆盖领域驱动设计的主要模式与主流方法，并在此基础上提出“领域驱动设计统一过程”（domain-driven design unified process，DDDUP），将整个软件构建过程划分为全局分析、架构映射和领域建模3个阶段。除给出诸多案例来阐释领域驱动设计统一过程中的方法与模式之外，本书还通过一个真实而完整的案例全面展现了如何进行领域驱动设计统一过程的实施和落地。为了更好地运用领域驱动设计统一过程，本书还开创性地引入了业务服务、菱形对称架构、领域驱动架构、服务驱动设计等方法与模式，总结了领域驱动设计能力评估模型与参考过程模型。本书提出的一整套方法体系已在多个项目中推广和落地。 本书适合希望领会软件架构本质、提高软件架构能力的软件架构师，希望提高领域建模能力、打磨软件设计能力的开发人员，希望掌握业务分析与建模方法的业务分析人员，希望学习领域驱动设计并将其运用到项目中的软件行业从业人员阅读参考。"
+}
