@@ -1,0 +1,26 @@
+{
+  "title": "微服务设计（第2版）",
+  "creator": "【英】萨姆·纽曼",
+  "sourcePath": "/home/ljh2923/opencode-project/read/book/微服务设计（第2版） (【英】萨姆·纽曼) (z-library.sk, 1lib.sk, z-lib.sk).epub",
+  "fileSha256": "3c31d07c43972cb32d68839b1f924dc8e112a8b72bb92b0b082742c4e9afca7d",
+  "fileSize": 11279828,
+  "spineItemsCount": 267,
+  "ncxChapterCount": 16,
+  "ncxSectionCount": 157,
+  "ncxSubsectionCount": 282,
+  "partCount": 3,
+  "frontMatterExcluded": 8,
+  "frontMatterList": [
+    "版权信息",
+    "O'Reilly Media, Inc.介绍",
+    "审读致谢",
+    "专家推荐",
+    "推荐序一 微服务架构规模化应用新挑战",
+    "推荐序二 微服务：当前最流行的架构设计模式",
+    "译者序",
+    "前言"
+  ],
+  "identifier": "urn:uuid:dbacfb97-fbe2-4236-8bf5-88e206c78f72",
+  "language": "zh",
+  "isbn": "9787115638762"
+}
