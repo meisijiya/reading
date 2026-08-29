@@ -95,6 +95,14 @@ nav:
     - "解构领域驱动设计/05-融合/README.md"
     - "解构领域驱动设计/06-附录/README.md"
     - "解构领域驱动设计/99-速查表.md"
+  - "AI Prompt Engineering: The 2026 Guide":
+    - "AI Prompt Engineering: The 2026 Guide/INDEX.md"
+    - "AI Prompt Engineering: The 2026 Guide/01-基础与导读/README.md"
+    - "AI Prompt Engineering: The 2026 Guide/02-场景-Prompt-模板库/README.md"
+    - "AI Prompt Engineering: The 2026 Guide/03-进阶与商业应用/README.md"
+    - "AI Prompt Engineering: The 2026 Guide/04-参考附录-A-E/README.md"
+    - "AI Prompt Engineering: The 2026 Guide/05-实战卷-F-J-与作者/README.md"
+    - "AI Prompt Engineering: The 2026 Guide/99-速查表.md"
 
 markdown_extensions:
   - admonition
