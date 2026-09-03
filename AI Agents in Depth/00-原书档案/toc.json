@@ -1,0 +1,115 @@
+{
+  "book": {
+    "title": "深入理解 AI Agent：设计原理与工程实践",
+    "author": "李博杰",
+    "language": "zh-CN",
+    "date": "2026-08-10T06:43:05Z",
+    "identifier": "https://github.com/bojieli/ai-agent-book#zh-CN",
+    "source": "epub",
+    "source_file": "book/AI-Agents-in-Depth-zh-CN.epub",
+    "chapters": 12,
+    "extraction_date": "2026-09-03",
+    "extraction_method": "zipfile + BeautifulSoup (utf-8 → utf-8)",
+    "encoding_note": "OPF/NCX 声明 UTF-8，字节流验证为真实 UTF-8（label '引言' = e5 bc 95 e8 a8 80）；本知识包按 UTF-8 解码直接落盘"
+  },
+  "chapters": [
+    {
+      "chid": "ch001",
+      "sha256": "c8fa1ac0c19ce9768ea2b37b1e731461e394b5a738c6cc26b81cb248fe867b61",
+      "bytes": 20839,
+      "title": "引言",
+      "file": "fulltext/ch001.md",
+      "extracted_title": "引言"
+    },
+    {
+      "chid": "ch002",
+      "sha256": "8a0b12df655fea6ae99305364dd5fbf852cd50388bb5d83f830264efd800f3ab",
+      "bytes": 73022,
+      "title": "AI Agent 入门",
+      "file": "fulltext/ch002.md",
+      "extracted_title": "1AI Agent 入门"
+    },
+    {
+      "chid": "ch003",
+      "sha256": "008833e258d9b9cbae2017571fbcb96c77c7df2fb898ae942600b39a65d0c677",
+      "bytes": 126597,
+      "title": "上下文工程",
+      "file": "fulltext/ch003.md",
+      "extracted_title": "2上下文工程"
+    },
+    {
+      "chid": "ch004",
+      "sha256": "15e88aed55e0e5f2022ac268590c8956d489b3c5639814c18361a478a0e1ae90",
+      "bytes": 106997,
+      "title": "用户记忆和知识库",
+      "file": "fulltext/ch004.md",
+      "extracted_title": "3用户记忆和知识库"
+    },
+    {
+      "chid": "ch005",
+      "sha256": "e844b1ea24055a2d75f4f121a3ffc2b56cbef6e1003638591264774522e9f1fb",
+      "bytes": 105492,
+      "title": "工具",
+      "file": "fulltext/ch005.md",
+      "extracted_title": "4工具"
+    },
+    {
+      "chid": "ch006",
+      "sha256": "5df3b46269049fd0d3499fb9abd6f00df9fef5f68c3a7f3e3fa3c8cae0012a8b",
+      "bytes": 108913,
+      "title": "Coding Agent 与通用 Agent",
+      "file": "fulltext/ch006.md",
+      "extracted_title": "5Coding Agent 与通用 Agent"
+    },
+    {
+      "chid": "ch007",
+      "sha256": "1bb811bf136dd79eb5a5672acf4f7ea5bc858b6224a113ded671cd00c36b6be6",
+      "bytes": 110560,
+      "title": "Agent 的评估",
+      "file": "fulltext/ch007.md",
+      "extracted_title": "6Agent 的评估"
+    },
+    {
+      "chid": "ch008",
+      "sha256": "a8be1c9ad4294450c29a97395eae5a47a739c17edfe00fc3b83d36e573939d57",
+      "bytes": 116030,
+      "title": "模型后训练",
+      "file": "fulltext/ch008.md",
+      "extracted_title": "7模型后训练"
+    },
+    {
+      "chid": "ch009",
+      "sha256": "88397317e3a709892348c487279e56927525e3773152cf6700071623bb204b5b",
+      "bytes": 55781,
+      "title": "Agent 的持续进化",
+      "file": "fulltext/ch009.md",
+      "extracted_title": "8Agent 的持续进化"
+    },
+    {
+      "chid": "ch010",
+      "sha256": "957810594089661becde153fff4acb4224510c24705ac80cf6b1163810187502",
+      "bytes": 60929,
+      "title": "多模态与实时交互",
+      "file": "fulltext/ch010.md",
+      "extracted_title": "9多模态与实时交互"
+    },
+    {
+      "chid": "ch011",
+      "sha256": "39a5ec37e6be7880f8e05572097a88f77e03d32dd0003b62eb8be6b64c9357f7",
+      "bytes": 89625,
+      "title": "多 Agent 协作",
+      "file": "fulltext/ch011.md",
+      "extracted_title": "10多 Agent 协作"
+    },
+    {
+      "chid": "ch012",
+      "sha256": "3ecc3aa7d54ba20a5c95f02819d7f34ee8f58071b50d6d0471b521ab2bc6e02f",
+      "bytes": 10637,
+      "title": "后记：回到 Agent = LLM + 上下文 + 工具",
+      "file": "fulltext/ch012.md",
+      "extracted_title": "后记：回到 Agent = LLM + 上下文 + 工具"
+    }
+  ],
+  "total_chapters": 12,
+  "toc_source": "EPUB/toc.ncx (first <text> per chXXX in order of appearance)"
+}

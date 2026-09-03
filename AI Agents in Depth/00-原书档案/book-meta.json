@@ -1,0 +1,14 @@
+{
+  "title": "深入理解 AI Agent：设计原理与工程实践",
+  "author": "李博杰",
+  "language": "zh-CN",
+  "date": "2026-08-10T06:43:05Z",
+  "identifier": "https://github.com/bojieli/ai-agent-book#zh-CN",
+  "source": "epub",
+  "source_file": "book/AI-Agents-in-Depth-zh-CN.epub",
+  "chapters": 12,
+  "extraction_date": "2026-09-03",
+  "extraction_method": "zipfile + BeautifulSoup (utf-8 → utf-8)",
+  "encoding_note": "OPF/NCX 声明 UTF-8，字节流验证为真实 UTF-8（label '引言' = e5 bc 95 e8 a8 80）；本知识包按 UTF-8 解码直接落盘",
+  "total_bytes": 985422
+}

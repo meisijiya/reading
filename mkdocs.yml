@@ -103,6 +103,29 @@ nav:
     - "AI Prompt Engineering: The 2026 Guide/04-参考附录-A-E/README.md"
     - "AI Prompt Engineering: The 2026 Guide/05-实战卷-F-J-与作者/README.md"
     - "AI Prompt Engineering: The 2026 Guide/99-速查表.md"
+  - "AI Engineering (Chip Huyen)":
+    - "AI Engineering (Chip Huyen)/INDEX.md"
+    - "AI Engineering (Chip Huyen)/01-基础与理解/README.md"
+    - "AI Engineering (Chip Huyen)/02-评估方法/README.md"
+    - "AI Engineering (Chip Huyen)/03-Prompt与上下文/README.md"
+    - "AI Engineering (Chip Huyen)/04-微调与数据/README.md"
+    - "AI Engineering (Chip Huyen)/05-推理优化与架构/README.md"
+    - "AI Engineering (Chip Huyen)/06-尾声/README.md"
+    - "AI Engineering (Chip Huyen)/99-速查表.md"
+  - "AI Agents in Depth":
+    - "AI Agents in Depth/INDEX.md"
+    - "AI Agents in Depth/00-引言与后记/README.md"
+    - "AI Agents in Depth/01-AI-Agent入门/README.md"
+    - "AI Agents in Depth/02-上下文工程/README.md"
+    - "AI Agents in Depth/03-用户记忆和知识库/README.md"
+    - "AI Agents in Depth/04-工具/README.md"
+    - "AI Agents in Depth/05-Coding-Agent与通用Agent/README.md"
+    - "AI Agents in Depth/06-Agent的评估/README.md"
+    - "AI Agents in Depth/07-模型后训练/README.md"
+    - "AI Agents in Depth/08-Agent的持续进化/README.md"
+    - "AI Agents in Depth/09-多模态与实时交互/README.md"
+    - "AI Agents in Depth/10-多Agent协作/README.md"
+    - "AI Agents in Depth/99-速查表.md"
 
 markdown_extensions:
   - admonition
