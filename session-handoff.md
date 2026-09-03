@@ -24,21 +24,16 @@
 
 | 字段 | 值 |
 |---|---|
-| **任务** | 蒸馏《深入理解 AI Agent：设计原理与工程实践》(李博杰) + push + 审计 |
-| **当前阶段** | done（2026-09-03 push `fbebc71` 成功） |
-| **数据源** | epub（`book/AI-Agents-in-Depth-zh-CN.epub`） |
-| **目标书目录** | `AI Agents in Depth/` |
-| **数据文件** | `book/AI-Agents-in-Depth-zh-CN.epub` |
-| **章节/章数** | 12/12（10 章正文 + 引言 + 后记）落盘到 `00-原书档案/fulltext/ch001..ch012.md` |
-| **卡片数** | 90/90（10 模块 + 引言/后记 1 模块） |
-| **verbatim 通过率** | 78/79 = 98%（11 张无 📖 块故意保留：Q3-6/Q5-9/Q6-3/Q7-7/Q8-2/Q8-7/Q9-2/Q9-3/Q9-4/Q10-4/Q10-5 + Q3-11） |
-| **nav 接入** | mkdocs.yml ✓ + docs/ symlink ✓（mode 120000 blob `46cde1f` → `../AI Agents in Depth`） |
-| **build 状态** | 本地失败（Windows git checkout 把 symlink 拉成 0 字节空文件，预存问题）→ CI/Linux 通过 |
-| **最近 commit** | `fbebc71` — distill: AI Agents in Depth (李博杰) + 12 章 90 卡知识包 + nav 接入 |
-| **未 push 的改动** | 当前 4 个新文件（init.sh / progress.md / session-handoff.md / feature_list.json）未 commit + push |
-| **本地临时探查文件** | 旧 session 的 `_audit.py` / `_audit_run.txt` / `_commit_msg.txt` / `_dbg_*.txt` / `list_failed.py` / `probe_docs.py` / `verify_*.py` / `failed_cards.txt` / `_sec_*.txt` / `_tmp.txt` / `_probe_*.txt` / `_quote_check.txt` 全部已清理；本次新加的 `_scan_books.py` / `_scan_books.json` / `_scan_commits.py` / `_scan_commits.json` 待清理 |
-| **阻塞 / 风险** | 无新阻塞；Windows symlink 预存问题见 `progress.md`「已知预存问题」 |
-| **下一步** | 把 4 个 harness 新文件 commit + push；下个 session 默认读 `progress.md` 拿活跃任务 |
+| **任务** | 仓库清洁大扫除（harness-creator 触发）+ 5 个 atomic commit |
+| **当前阶段** | done（4 commit 落地 `247a983`，第 5 个 harness 入仓 待 commit） |
+| **数据源** | N/A（清洁任务，无蒸馏） |
+| **目标** | 整理仓库 + 收 4 个 harness 资产 + 修 refactor 漏移 |
+| **最近 commit** | `247a983` — chore(scripts): 收入 epub_extract.py; 回退 3 个 spurious 0-content diff |
+| **本 session 4 个新 commit** | `2c63432` (refactor 补移) → `7402670` (.gitignore) → `436b8a9` (notepad) → `247a983` (scripts) |
+| **未 push 的改动** | 当前 4 个新文件（init.sh / progress.md / session-handoff.md / feature_list.json）即将 commit；commit 后还需 `git push` |
+| **本地临时探查文件** | 旧 session 的所有探查文件已清理；本次新增 1 个 `/tmp/commit4_msg.txt`（已在 commit 4 用完，可保留也可删） |
+| **阻塞 / 风险** | 无新阻塞；`docs/AI Engineering (Chip Huyen)` broken symlink 仍是预存问题 |
+| **下一步** | 提交第 5 个 commit（harness 4 资产入仓）→ push → 验 CI |
 | **可恢复的钩子** | 无后台进程；切走即结束 |
 
 ---
@@ -62,6 +57,18 @@
 - 决策：25 张非 verbatim 卡用 background worker 子任务修，78/79=98% 通过率；Q3-6/Q5-9/Q6-3/Q7-7/Q8-2/Q8-7/Q9-2/Q9-3/Q9-4/Q10-4/Q10-5 + Q3-11 故意保留无 📖 块
 - 留给下一个 session 的：本地 mkdocs build 失败（Windows symlink 预存问题），CI 跳；用户验站点确认
 -->
+
+### 2026-09-03 — 仓库清洁大扫除（harness-creator 触发）
+
+- **阶段**：done
+- **产出**：4 个 atomic commit + 1 个待 commit（harness 资产入仓）
+  - `2c63432` fix(site): 完成 refactor — AI Prompt Engineering 也 git mv 到 docs/（34 个文件纯 rename 0 字节变更）
+  - `7402670` chore(gitignore): 排除 .omo/run-continuation/ + 清 58 个未跟踪 + 收 3 个 modified .omo
+  - `436b8a9` chore(omo): 入仓 claude-code 橙皮书蒸馏 session 的 notepad + plan（5 个文件）
+  - `247a983` chore(scripts): 收 scripts/epub_extract.py + 折 3 个 scripts mode noise
+  - **即将**：harness 4 资产入仓（init.sh / progress.md / session-handoff.md / feature_list.json）
+- **决策**：把 refactor 漏移、AI Prompt Engineering 这本书补上；`.omo/run-continuation/` 用 gitignore 解决（不再增长）；scripts 的 mode noise 用 `git add` 折进仓库（不动 content）；PUA 字符路径全程用 Python subprocess 绕路（不能用 PowerShell 直接传）
+- **留给下一个 session 的**：push 这 5 个 commit + 验 CI；继续推进 `AI Engineering (Chip Huyen)` 知识包入 git
 
 ### 2026-09-03 — 蒸馏《AI Agents in Depth》+ 12 章 + 90 卡 + push
 

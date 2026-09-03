@@ -7,10 +7,10 @@
 
 | 项 | 值 |
 |---|---|
-| 上次成功 push | `fbebc71` — 2026-09-03 |
-| 内容 | 蒸馏《深入理解 AI Agent：设计原理与工程实践》(李博杰) + 12 章 90 卡知识包 + GitHub Pages nav 接入 |
-| 站点 | <https://meisijiya.github.io/reading/> |
-| 引用验证 | 78/79 = 98% verbatim 通过（11 张无 📖块不参与） |
+| 上次 push | `247a983` — 2026-09-03 |
+| 内容 | **清洁大扫除** — 5 个 atomic commit：补 refactor 漏移（AI Prompt Engineering）→ gitignore .omo/run-continuation/ → 入仓旧 notepad → 收 epub_extract.py → 提交 4 个 harness 资产 |
+| 站点 | <https://meisijiya.github.io/reading/>（待 push 后 CI 验证） |
+| 引用验证 | 上次（fbebc71）78/79 = 98%；本次清洁 0 字节内容变更 |
 
 ## 当前活跃任务
 
@@ -22,17 +22,17 @@
    - 阻塞：本地目录 1.2MB 蒸馏成品（6 模块 / 10 § 卡）已写好，但 `git add` 之前没 commit 上去
    - 处理：下次有空时 `git add "AI Engineering (Chip Huyen)"` + 同步 `mkdocs.yml` 的 nav（已有）+ `docs/AI Engineering (Chip Huyen)` symlink + commit + push
    - 风险：symlink 在 Windows 上不能 checkout，本地无法 build 验证；CI 验证就行
-2. **跑一次 `init.sh`**：把当前 8 本已发布书过一遍 Step 1+2 不变量 + Step 3 build，验证 dist 状态健康
-3. **过 `_audit_report.md` 旧结论**：11 张无 📖块的卡（Q3-6/Q5-9/Q6-3/Q7-7/Q8-2/Q8-7/Q9-2/Q9-3/Q9-4/Q10-4/Q10-5 + Q3-11）是用户故意保留，不动；如要补 📖 块需走 worker 派发路径
+2. **push 这次清洁的 5 个 commit**（`247a983` 还在本地）→ CI 跑 mkdocs build 验证
+3. **跑一次 `init.sh`**：把当前 8 本已发布书过一遍 Step 1+2 不变量 + Step 3 build，验证 dist 状态健康
+4. **过 `_audit_report.md` 旧结论**：11 张无 📖块的卡（Q3-6/Q5-9/Q6-3/Q7-7/Q8-2/Q8-7/Q9-2/Q9-3/Q9-4/Q10-4/Q10-5 + Q3-11）是用户故意保留，不动；如要补 📖 块需走 worker 派发路径
 
 ## 已知预存问题（不在本任务 scope）
 
 | 问题 | 状态 | 风险 |
 |---|---|---|
-| `docs/` 下 8 本书 symlink 在 Windows git checkout 下是 0 字节空文件 | 预存在 | 本地 `mkdocs build` 失败；CI/Linux 正常 |
-| `.omo/` 文件被改 | 预存在 | 未知；查 `.gitignore` 是否要排除 |
-| `AI Engineering (Chip Huyen)/` 在本地但**未进 git** | 预存在 | mkdocs.yml nav 引用了它但远端没有 → 站点有死链 |
-| `tmp-book-test/` 已 revert | 已清理 | OK |
+| `docs/AI Engineering (Chip Huyen)` 是 broken symlink | 预存在 | mkdocs build 本地会 warning「No such file or directory」；CI/Linux 正常；该书本身未进 git |
+| Windows 下 git 对 U+F03A (PUA) 字符路径处理异常 | 预存在 | AI Prompt Engineering 那本书的目录名带 PUA 字符；git add/checkout/reset/mv 在 shell 层都需要绕路（用 Python 走 PUA 字符 literal） |
+| `mkdocs build --strict` 在 Windows 本地会因 symlink 失败 | 预存在 | 推 CI 验；本地不强求 |
 
 ## 暂停 / 终止条件
 
@@ -42,8 +42,8 @@
 
 ## 进度纪要（保留最近 5 条）
 
+- 2026-09-03：仓库清洁大扫除，5 个 atomic commit：`2c63432`(refactor 补移) → `7402670`(.gitignore 收 4) → `436b8a9`(notepad 入仓) → `247a983`(scripts 收 1) → 本次（harness 4 资产入仓）
 - 2026-09-03：蒸馏《AI Agents in Depth》+ 12 章 90 卡 + 修 25 张非 verbatim 卡（78/79=98%）+ push `fbebc71`
 - 2026-08-30：蒸馏《AI Prompt Engineering: The 2026 Guide》+ 22 章 + push `0f50abd`
 - 2026-08-26：蒸馏《解构领域驱动设计》+ 20 章 + push `b807df1`
 - 2026-08-25：蒸馏《微服务设计（第2版）》+ 16 章 + push `4133ae1`
-- 2026-08-25：蒸馏《凤凰架构》+ 16 章 + push `2ce608d`
