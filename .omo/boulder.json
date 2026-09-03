@@ -1,193 +1,171 @@
 {
   "schema_version": 2,
-  "active_work_id": "github-pages-8bd9078f",
+  "active_work_id": "claude-code-orange-book-distill-928cef22",
   "works": {
-    "github-pages-8bd9078f": {
-      "work_id": "github-pages-8bd9078f",
-      "active_plan": "/home/ljh2923/opencode-project/read/.omo/plans/github-pages.md",
-      "plan_name": "github-pages",
-      "status": "active",
-      "started_at": "2026-08-23T15:48:52.940Z",
-      "updated_at": "2026-08-23T16:00:39.679Z",
+    "claude-code-orange-book-distill-928cef22": {
+      "work_id": "claude-code-orange-book-distill-928cef22",
+      "active_plan": "/home/ljh2923/opencode-project/read/.omo/plans/claude-code-orange-book-distill.md",
+      "plan_name": "claude-code-orange-book-distill",
+      "status": "completed",
+      "started_at": "2026-08-24T14:50:31.263Z",
+      "updated_at": "2026-08-24T15:44:00.268Z",
       "session_ids": [
-        "opencode:ses_fd0b086c9ffe53Fa93S3AjqWqL"
+        "opencode:ses_fcbbf9977ffegoawZ7bwmv6n5A"
       ],
       "session_origins": {
-        "opencode:ses_fd0b086c9ffe53Fa93S3AjqWqL": "direct"
+        "opencode:ses_fcbbf9977ffegoawZ7bwmv6n5A": "direct"
       },
       "agent": "atlas",
       "task_sessions": {
         "todo:1": {
           "task_key": "todo:1",
           "task_label": "1",
-          "task_title": "`.gitignore`: 写仓库级 .gitignore 排除 site/ __pycache__/ .venv/ .codegraph/ .omo/drafts/ 等本地工件 - expect `git status` 干净",
-          "session_id": "opencode:ses_fd0af7ca1ffe4xThvBPv5PdkZp",
+          "task_title": "`scripts/distill_epub.py` (含 path lock + script + 运行): **Step 0 - Path lock**（必须先完成，否则不要继续）：(a) `ls -1 book/*.epub` 拿 SOURCE_EPUB（实际文件名 — 当前预期 `Claude Code橙皮书AI编程实战 (花叔) (z-library.sk, 1lib.sk, z-lib.sk).epub`）；(b) `python -c \"import zipfile,xml.etree.ElementTree as ET; ns={'dc':'http://purl.org/dc/elements/1.1/'}; t=ET.parse(zipfile.ZipFile('book/<SOURCE_EPUB>').open('OEBPS/content.opf')); r=t.getroot(); print('TITLE='+r.find('dc:title',ns).text); print('CREATOR='+r.find('dc:creator',ns).text)\"` 拿 OPF title + creator；(c) 断言 CREATOR == '花叔'、OPF TITLE == 'Claude Code橙皮书：AI编程实战'，失败 abort；(d) 锁 `TARGET_DIR=\"Claude Code橙皮书：AI编程实战 (花叔)\"`。**Step 1 - Script body**：写 `scripts/distill_epub.py`，接受 `--src <SOURCE_EPUB> --out <TARGET_DIR>/00-原书档案`，步骤：(1) sha256(file)+ os.path.getsize；(2) ebooklib read_epub + extract OPF metadata (title/creator/identifier/language/generator)，缺字段跳过不存；(3) 遍历 NCX navMap 按 level 分组：level 0 = Part (label match `^第N部分` or `Part N`)；level 1 = Chapter (label match `^第\\d+章`)；其余 level 跳过；(4) chapter 切分 = level 1 节点的递归子节点内容合并（用 ebooklib spine 索引回溯）；(5) 对每 chapter 写 `fulltext/uid-NN-<chapterSlug>.md`，frontmatter 含 `uid: NN / level: 1 / chapterNumber: §N / title: [label] / wordCount: [N] / parentPart: [partName or empty]`；(6) zipfile.extract 所有 media items 到 `assets/`；(7) BeautifulSoup 解析每章 HTML → markdown，含 `<img src>` 重写为 `../00-原书档案/assets/<hash>.<ext>`（fulltext 在 `NN-部/` 下需 `..` 回退到 `<TARGET_DIR>/`）；(8) 写 `book-meta.json`：所有 OPF 字段（缺则 skip）+ `fileSha256` + `fileSize` + `sourcePath` + `spineItemsCount`（spine len）+ `ncxChapterCount`（level 1 节点数）+ `ncxSubchapterCount`（其余 level 数）+ `partCount`（level 0 节点数）；(9) 写 `toc.md`：表头行 `uid|level|chapterNumber|title|wordCount|parentPart`，其后每章一行（pipe-separated）。**Step 2 - Run**: `python scripts/distill_epub.py --src \"$SOURCE_EPUB\" --out \"$TARGET_DIR/00-原书档案\"`. — expect script 退出 0；stdout 含 `TITLE=Claude Code橙皮书：AI编程实战` + `CREATOR=花叔` + `extracted N chapters across M parts`；产出 `book-meta.json` + `toc.md` + `fulltext/*.md` + `assets/*` 全部齐全；OPF 缺字段（publisher/date/rights）book-meta.json 内不出现。",
+          "session_id": "opencode:ses_fcbbb722effeFFP5U3ZWscBS5s",
           "agent": "Sisyphus-Junior",
-          "category": "quick",
-          "updated_at": "2026-08-23T15:50:42.647Z",
-          "started_at": "2026-08-23T15:50:28.307Z",
+          "category": "deep",
+          "started_at": "2026-08-24T14:54:19.403Z",
           "status": "completed",
-          "ended_at": "2026-08-23T15:50:42.647Z",
-          "elapsed_ms": 14340
-        },
-        "todo:2": {
-          "task_key": "todo:2",
-          "task_label": "2",
-          "task_title": "`requirements.txt`: 锁 mkdocs-material[recommended]==9.* + mkdocs-awesome-nav==3.* + mkdocs-section-index==0.3.* + pymdown-extensions - expect `pip install -r` 可重现构建",
-          "session_id": "opencode:ses_fd0addd59ffeDxM6bOu6Nz91BJ",
-          "agent": "Sisyphus-Junior",
-          "category": "unspecified-low",
-          "started_at": "2026-08-23T15:51:23.209Z",
-          "status": "completed",
-          "updated_at": "2026-08-23T15:53:19.514Z",
-          "ended_at": "2026-08-23T15:53:19.514Z",
-          "elapsed_ms": 116305
-        },
-        "todo:4": {
-          "task_key": "todo:4",
-          "task_label": "4",
-          "task_title": "`docs/index.md`: 写首页（站点标题+一句话+两本书卡片：封面 URL + 标题 + 作者 + 模块数 + 速查表入口） - expect README 卡片可点入各书 INDEX",
-          "session_id": "opencode:ses_fd0ac369dffedTkLdQ3lGLRMnV",
-          "agent": "Sisyphus-Junior",
-          "category": "writing",
-          "updated_at": "2026-08-23T15:55:03.521Z",
-          "started_at": "2026-08-23T15:54:49.695Z",
-          "status": "completed",
-          "ended_at": "2026-08-23T15:55:03.521Z",
-          "elapsed_ms": 13826
-        },
-        "todo:5": {
-          "task_key": "todo:5",
-          "task_label": "5",
-          "task_title": "`AGENTS.md`: 在现有\"规则二\"之后追加\"规则三：GitHub Page 同步（github-pages-sync）\"（触发时机：book-distill 完成 push；机制：CI 自动扫描 <书名>/INDEX.md 入 nav；唯一约束：每本书必须有 INDEX.md，否则 site 章节缺失） - expect 现有\"规则一/规则二\"不被改动",
-          "session_id": "opencode:ses_fd0aaae53ffeB6YCJUV6U4cFPo",
-          "agent": "Sisyphus-Junior",
-          "category": "writing",
-          "updated_at": "2026-08-23T15:56:30.468Z",
-          "started_at": "2026-08-23T15:56:18.903Z",
-          "status": "completed",
-          "ended_at": "2026-08-23T15:56:30.468Z",
-          "elapsed_ms": 11565
-        },
-        "todo:6": {
-          "task_key": "todo:6",
-          "task_label": "6",
-          "task_title": "`design.md`: 在 worker session 中调用 `/frontend` skill 产出站点视觉/结构/交互/响应式设计文档（含设计令牌、栅格、组件清单、断点、可访问性） - expect design.md 在仓库根，可直接作为后续前端实现的依据",
-          "session_id": "opencode:ses_fd0a91acaffeslEbqvi34ouVwU",
-          "agent": "Sisyphus-Junior",
-          "category": "visual-engineering",
-          "updated_at": "2026-08-23T15:58:42.860Z",
-          "started_at": "2026-08-23T15:58:26.638Z",
-          "status": "completed",
-          "ended_at": "2026-08-23T15:58:42.860Z",
-          "elapsed_ms": 16222
+          "updated_at": "2026-08-24T15:03:31.853Z",
+          "ended_at": "2026-08-24T15:03:31.853Z",
+          "elapsed_ms": 552450
         },
         "todo:7": {
           "task_key": "todo:7",
           "task_label": "7",
-          "task_title": "`.github/workflows/pages.yml`: 用 peaceiris/actions-gh-pages 或官方 mkdocs gh-deploy 动作，在 push main 时构建并发布到 GitHub Pages - expect Actions run 成功",
-          "session_id": "opencode:ses_fd0a729b5ffeWB6NEoZC5CEfuA",
+          "task_title": "`<TARGET_DIR>/INDEX.md`: 写完整 INDEX：①书籍元数据表（title/creator/identifier/language/generator + fileSha256/fileSize/spineItemsCount/ncxChapterCount；OPF 缺字段表格内不列）+ 链接 `打开源文件（外部链接→book/...）`②**覆盖率声明 = 100%（epub 一次性落档）** + 升级路径 N/A（已 100%）③目录树展示按 `toc.md` 分 Part + Chapter ④**AI 检索指南含 §N.M grep 示例（`grep '§1.1' ...`）**⑤模块速览表按 Part group 列出 chapter。 — expect `head -80 INDEX.md` 包含元数据表 + 覆盖率声明（含\"100%\" 与 \"epub\"）+ 目录树 + grep 示例。",
+          "session_id": "opencode:ses_fcbb234d6ffe2Aq6580pSlp3hT",
           "agent": "Sisyphus-Junior",
-          "category": "unspecified-low",
-          "updated_at": "2026-08-23T16:00:39.679Z",
-          "started_at": "2026-08-23T16:00:20.490Z",
+          "category": "unspecified-high",
+          "updated_at": "2026-08-24T15:17:57.661Z",
+          "started_at": "2026-08-24T15:06:30.587Z",
           "status": "completed",
-          "ended_at": "2026-08-23T16:00:39.679Z",
-          "elapsed_ms": 19189
+          "ended_at": "2026-08-24T15:17:57.661Z",
+          "elapsed_ms": 687074
+        },
+        "todo:9": {
+          "task_key": "todo:9",
+          "task_label": "9",
+          "task_title": "`<TARGET_DIR>/99-速查表.md`: 三段 = (a) 场景→方法速查表（≥10 行）+ (b) 关键数字与概念（≥5 条含 Claude Code 特性：版本/tokens/commands/keybindings 等）+ (c) Claude Code 特色清单独立成表（commands / shortcuts / workflows / patterns 四小段或一组合表）。末尾 `> 冲突时以 additions/ 中标注「影响」的新条目为准` — expect 三段齐全，第三段含 \"commands\" 关键词；末尾不含 `⏚`。",
+          "session_id": "opencode:ses_fcba5ebd4ffe0ymW1Yl7XatykU",
+          "agent": "Sisyphus-Junior",
+          "category": "unspecified-high",
+          "updated_at": "2026-08-24T15:34:48.675Z",
+          "started_at": "2026-08-24T15:34:37.735Z",
+          "status": "completed",
+          "ended_at": "2026-08-24T15:34:48.675Z",
+          "elapsed_ms": 10940
+        },
+        "todo:16": {
+          "task_key": "todo:16",
+          "task_label": "16",
+          "task_title": "本地 dry build: `mkdocs build --strict`. — expect exit 0；`site/` 内含新书页面路径 `site/Claude Code橙皮书：AI编程实战 (花叔)/INDEX.html`。",
+          "session_id": "opencode:ses_fcb96db04ffeMzPKDhQlxLryVr",
+          "agent": "Sisyphus-Junior",
+          "category": "quick",
+          "started_at": "2026-08-24T15:36:38.428Z",
+          "status": "completed",
+          "updated_at": "2026-08-24T15:38:46.450Z",
+          "ended_at": "2026-08-24T15:38:46.450Z",
+          "elapsed_ms": 128022
+        },
+        "todo:17": {
+          "task_key": "todo:17",
+          "task_label": "17",
+          "task_title": "push + CI: `git add -A && git commit -m 'distill: Claude Code橙皮书：AI编程实战 (花叔) + 规则四' && git push origin main`. — expect GitHub Actions run `pages.yml` 绿；站点 `https://meisijiya.github.io/reading/` 含新书 grid card。",
+          "session_id": "opencode:ses_fcb930701ffeoVtG272bRQUGwE",
+          "agent": "Sisyphus-Junior",
+          "category": "unspecified-high",
+          "updated_at": "2026-08-24T15:42:24.377Z",
+          "started_at": "2026-08-24T15:42:18.498Z",
+          "status": "completed",
+          "ended_at": "2026-08-24T15:42:24.377Z",
+          "elapsed_ms": 5879
         }
-      }
+      },
+      "ended_at": "2026-08-24T15:44:00.268Z",
+      "elapsed_ms": 3209005
     }
   },
-  "active_plan": "/home/ljh2923/opencode-project/read/.omo/plans/github-pages.md",
-  "started_at": "2026-08-23T15:48:52.940Z",
-  "status": "active",
-  "updated_at": "2026-08-23T16:00:39.679Z",
+  "active_plan": "/home/ljh2923/opencode-project/read/.omo/plans/claude-code-orange-book-distill.md",
+  "started_at": "2026-08-24T14:50:31.263Z",
+  "status": "completed",
+  "updated_at": "2026-08-24T15:44:00.268Z",
   "session_ids": [
-    "opencode:ses_fd0b086c9ffe53Fa93S3AjqWqL"
+    "opencode:ses_fcbbf9977ffegoawZ7bwmv6n5A"
   ],
   "session_origins": {
-    "opencode:ses_fd0b086c9ffe53Fa93S3AjqWqL": "direct"
+    "opencode:ses_fcbbf9977ffegoawZ7bwmv6n5A": "direct"
   },
-  "plan_name": "github-pages",
+  "plan_name": "claude-code-orange-book-distill",
   "task_sessions": {
     "todo:1": {
       "task_key": "todo:1",
       "task_label": "1",
-      "task_title": "`.gitignore`: 写仓库级 .gitignore 排除 site/ __pycache__/ .venv/ .codegraph/ .omo/drafts/ 等本地工件 - expect `git status` 干净",
-      "session_id": "opencode:ses_fd0af7ca1ffe4xThvBPv5PdkZp",
+      "task_title": "`scripts/distill_epub.py` (含 path lock + script + 运行): **Step 0 - Path lock**（必须先完成，否则不要继续）：(a) `ls -1 book/*.epub` 拿 SOURCE_EPUB（实际文件名 — 当前预期 `Claude Code橙皮书AI编程实战 (花叔) (z-library.sk, 1lib.sk, z-lib.sk).epub`）；(b) `python -c \"import zipfile,xml.etree.ElementTree as ET; ns={'dc':'http://purl.org/dc/elements/1.1/'}; t=ET.parse(zipfile.ZipFile('book/<SOURCE_EPUB>').open('OEBPS/content.opf')); r=t.getroot(); print('TITLE='+r.find('dc:title',ns).text); print('CREATOR='+r.find('dc:creator',ns).text)\"` 拿 OPF title + creator；(c) 断言 CREATOR == '花叔'、OPF TITLE == 'Claude Code橙皮书：AI编程实战'，失败 abort；(d) 锁 `TARGET_DIR=\"Claude Code橙皮书：AI编程实战 (花叔)\"`。**Step 1 - Script body**：写 `scripts/distill_epub.py`，接受 `--src <SOURCE_EPUB> --out <TARGET_DIR>/00-原书档案`，步骤：(1) sha256(file)+ os.path.getsize；(2) ebooklib read_epub + extract OPF metadata (title/creator/identifier/language/generator)，缺字段跳过不存；(3) 遍历 NCX navMap 按 level 分组：level 0 = Part (label match `^第N部分` or `Part N`)；level 1 = Chapter (label match `^第\\d+章`)；其余 level 跳过；(4) chapter 切分 = level 1 节点的递归子节点内容合并（用 ebooklib spine 索引回溯）；(5) 对每 chapter 写 `fulltext/uid-NN-<chapterSlug>.md`，frontmatter 含 `uid: NN / level: 1 / chapterNumber: §N / title: [label] / wordCount: [N] / parentPart: [partName or empty]`；(6) zipfile.extract 所有 media items 到 `assets/`；(7) BeautifulSoup 解析每章 HTML → markdown，含 `<img src>` 重写为 `../00-原书档案/assets/<hash>.<ext>`（fulltext 在 `NN-部/` 下需 `..` 回退到 `<TARGET_DIR>/`）；(8) 写 `book-meta.json`：所有 OPF 字段（缺则 skip）+ `fileSha256` + `fileSize` + `sourcePath` + `spineItemsCount`（spine len）+ `ncxChapterCount`（level 1 节点数）+ `ncxSubchapterCount`（其余 level 数）+ `partCount`（level 0 节点数）；(9) 写 `toc.md`：表头行 `uid|level|chapterNumber|title|wordCount|parentPart`，其后每章一行（pipe-separated）。**Step 2 - Run**: `python scripts/distill_epub.py --src \"$SOURCE_EPUB\" --out \"$TARGET_DIR/00-原书档案\"`. — expect script 退出 0；stdout 含 `TITLE=Claude Code橙皮书：AI编程实战` + `CREATOR=花叔` + `extracted N chapters across M parts`；产出 `book-meta.json` + `toc.md` + `fulltext/*.md` + `assets/*` 全部齐全；OPF 缺字段（publisher/date/rights）book-meta.json 内不出现。",
+      "session_id": "opencode:ses_fcbbb722effeFFP5U3ZWscBS5s",
       "agent": "Sisyphus-Junior",
-      "category": "quick",
-      "updated_at": "2026-08-23T15:50:42.647Z",
-      "started_at": "2026-08-23T15:50:28.307Z",
+      "category": "deep",
+      "started_at": "2026-08-24T14:54:19.403Z",
       "status": "completed",
-      "ended_at": "2026-08-23T15:50:42.647Z",
-      "elapsed_ms": 14340
-    },
-    "todo:2": {
-      "task_key": "todo:2",
-      "task_label": "2",
-      "task_title": "`requirements.txt`: 锁 mkdocs-material[recommended]==9.* + mkdocs-awesome-nav==3.* + mkdocs-section-index==0.3.* + pymdown-extensions - expect `pip install -r` 可重现构建",
-      "session_id": "opencode:ses_fd0addd59ffeDxM6bOu6Nz91BJ",
-      "agent": "Sisyphus-Junior",
-      "category": "unspecified-low",
-      "started_at": "2026-08-23T15:51:23.209Z",
-      "status": "completed",
-      "updated_at": "2026-08-23T15:53:19.514Z",
-      "ended_at": "2026-08-23T15:53:19.514Z",
-      "elapsed_ms": 116305
-    },
-    "todo:4": {
-      "task_key": "todo:4",
-      "task_label": "4",
-      "task_title": "`docs/index.md`: 写首页（站点标题+一句话+两本书卡片：封面 URL + 标题 + 作者 + 模块数 + 速查表入口） - expect README 卡片可点入各书 INDEX",
-      "session_id": "opencode:ses_fd0ac369dffedTkLdQ3lGLRMnV",
-      "agent": "Sisyphus-Junior",
-      "category": "writing",
-      "updated_at": "2026-08-23T15:55:03.521Z",
-      "started_at": "2026-08-23T15:54:49.695Z",
-      "status": "completed",
-      "ended_at": "2026-08-23T15:55:03.521Z",
-      "elapsed_ms": 13826
-    },
-    "todo:5": {
-      "task_key": "todo:5",
-      "task_label": "5",
-      "task_title": "`AGENTS.md`: 在现有\"规则二\"之后追加\"规则三：GitHub Page 同步（github-pages-sync）\"（触发时机：book-distill 完成 push；机制：CI 自动扫描 <书名>/INDEX.md 入 nav；唯一约束：每本书必须有 INDEX.md，否则 site 章节缺失） - expect 现有\"规则一/规则二\"不被改动",
-      "session_id": "opencode:ses_fd0aaae53ffeB6YCJUV6U4cFPo",
-      "agent": "Sisyphus-Junior",
-      "category": "writing",
-      "updated_at": "2026-08-23T15:56:30.468Z",
-      "started_at": "2026-08-23T15:56:18.903Z",
-      "status": "completed",
-      "ended_at": "2026-08-23T15:56:30.468Z",
-      "elapsed_ms": 11565
-    },
-    "todo:6": {
-      "task_key": "todo:6",
-      "task_label": "6",
-      "task_title": "`design.md`: 在 worker session 中调用 `/frontend` skill 产出站点视觉/结构/交互/响应式设计文档（含设计令牌、栅格、组件清单、断点、可访问性） - expect design.md 在仓库根，可直接作为后续前端实现的依据",
-      "session_id": "opencode:ses_fd0a91acaffeslEbqvi34ouVwU",
-      "agent": "Sisyphus-Junior",
-      "category": "visual-engineering",
-      "updated_at": "2026-08-23T15:58:42.860Z",
-      "started_at": "2026-08-23T15:58:26.638Z",
-      "status": "completed",
-      "ended_at": "2026-08-23T15:58:42.860Z",
-      "elapsed_ms": 16222
+      "updated_at": "2026-08-24T15:03:31.853Z",
+      "ended_at": "2026-08-24T15:03:31.853Z",
+      "elapsed_ms": 552450
     },
     "todo:7": {
       "task_key": "todo:7",
       "task_label": "7",
-      "task_title": "`.github/workflows/pages.yml`: 用 peaceiris/actions-gh-pages 或官方 mkdocs gh-deploy 动作，在 push main 时构建并发布到 GitHub Pages - expect Actions run 成功",
-      "session_id": "opencode:ses_fd0a729b5ffeWB6NEoZC5CEfuA",
+      "task_title": "`<TARGET_DIR>/INDEX.md`: 写完整 INDEX：①书籍元数据表（title/creator/identifier/language/generator + fileSha256/fileSize/spineItemsCount/ncxChapterCount；OPF 缺字段表格内不列）+ 链接 `打开源文件（外部链接→book/...）`②**覆盖率声明 = 100%（epub 一次性落档）** + 升级路径 N/A（已 100%）③目录树展示按 `toc.md` 分 Part + Chapter ④**AI 检索指南含 §N.M grep 示例（`grep '§1.1' ...`）**⑤模块速览表按 Part group 列出 chapter。 — expect `head -80 INDEX.md` 包含元数据表 + 覆盖率声明（含\"100%\" 与 \"epub\"）+ 目录树 + grep 示例。",
+      "session_id": "opencode:ses_fcbb234d6ffe2Aq6580pSlp3hT",
       "agent": "Sisyphus-Junior",
-      "category": "unspecified-low",
-      "updated_at": "2026-08-23T16:00:39.679Z",
-      "started_at": "2026-08-23T16:00:20.490Z",
+      "category": "unspecified-high",
+      "updated_at": "2026-08-24T15:17:57.661Z",
+      "started_at": "2026-08-24T15:06:30.587Z",
       "status": "completed",
-      "ended_at": "2026-08-23T16:00:39.679Z",
-      "elapsed_ms": 19189
+      "ended_at": "2026-08-24T15:17:57.661Z",
+      "elapsed_ms": 687074
+    },
+    "todo:9": {
+      "task_key": "todo:9",
+      "task_label": "9",
+      "task_title": "`<TARGET_DIR>/99-速查表.md`: 三段 = (a) 场景→方法速查表（≥10 行）+ (b) 关键数字与概念（≥5 条含 Claude Code 特性：版本/tokens/commands/keybindings 等）+ (c) Claude Code 特色清单独立成表（commands / shortcuts / workflows / patterns 四小段或一组合表）。末尾 `> 冲突时以 additions/ 中标注「影响」的新条目为准` — expect 三段齐全，第三段含 \"commands\" 关键词；末尾不含 `⏚`。",
+      "session_id": "opencode:ses_fcba5ebd4ffe0ymW1Yl7XatykU",
+      "agent": "Sisyphus-Junior",
+      "category": "unspecified-high",
+      "updated_at": "2026-08-24T15:34:48.675Z",
+      "started_at": "2026-08-24T15:34:37.735Z",
+      "status": "completed",
+      "ended_at": "2026-08-24T15:34:48.675Z",
+      "elapsed_ms": 10940
+    },
+    "todo:16": {
+      "task_key": "todo:16",
+      "task_label": "16",
+      "task_title": "本地 dry build: `mkdocs build --strict`. — expect exit 0；`site/` 内含新书页面路径 `site/Claude Code橙皮书：AI编程实战 (花叔)/INDEX.html`。",
+      "session_id": "opencode:ses_fcb96db04ffeMzPKDhQlxLryVr",
+      "agent": "Sisyphus-Junior",
+      "category": "quick",
+      "started_at": "2026-08-24T15:36:38.428Z",
+      "status": "completed",
+      "updated_at": "2026-08-24T15:38:46.450Z",
+      "ended_at": "2026-08-24T15:38:46.450Z",
+      "elapsed_ms": 128022
+    },
+    "todo:17": {
+      "task_key": "todo:17",
+      "task_label": "17",
+      "task_title": "push + CI: `git add -A && git commit -m 'distill: Claude Code橙皮书：AI编程实战 (花叔) + 规则四' && git push origin main`. — expect GitHub Actions run `pages.yml` 绿；站点 `https://meisijiya.github.io/reading/` 含新书 grid card。",
+      "session_id": "opencode:ses_fcb930701ffeoVtG272bRQUGwE",
+      "agent": "Sisyphus-Junior",
+      "category": "unspecified-high",
+      "updated_at": "2026-08-24T15:42:24.377Z",
+      "started_at": "2026-08-24T15:42:18.498Z",
+      "status": "completed",
+      "ended_at": "2026-08-24T15:42:24.377Z",
+      "elapsed_ms": 5879
     }
   },
-  "agent": "atlas"
+  "agent": "atlas",
+  "ended_at": "2026-08-24T15:44:00.268Z",
+  "elapsed_ms": 3209005
 }

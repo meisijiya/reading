@@ -53,18 +53,18 @@ created: 2026-08-23
 - [x] 5. `AGENTS.md`: 在现有"规则二"之后追加"规则三：GitHub Page 同步（github-pages-sync）"（触发时机：book-distill 完成 push；机制：CI 自动扫描 <书名>/INDEX.md 入 nav；唯一约束：每本书必须有 INDEX.md，否则 site 章节缺失） - expect 现有"规则一/规则二"不被改动
 - [x] 6. `design.md`: 在 worker session 中调用 `/frontend` skill 产出站点视觉/结构/交互/响应式设计文档（含设计令牌、栅格、组件清单、断点、可访问性） - expect design.md 在仓库根，可直接作为后续前端实现的依据
 - [x] 7. `.github/workflows/pages.yml`: 用 peaceiris/actions-gh-pages 或官方 mkdocs gh-deploy 动作，在 push main 时构建并发布到 GitHub Pages - expect Actions run 成功
-- [ ] 8. `git init` + 首次 commit + 添加远程 + `git push -u origin main`: 把本地 read/ 目录推到 meisijiya/reading - expect 远程仓库不再为空
-- [ ] 9. 远程启用 GitHub Pages: 在 https://github.com/meisijiya/reading/settings/pages 选 Source=GitHub Actions（或 gh CLI 启用） - expect 首次部署可见
-- [ ] 10. 验证首页与两本书入口可达（curl 或浏览器） - expect 两本书入口在 nav 出现且点击可达
+- [x] 8. `git init` + 首次 commit + 添加远程 + `git push -u origin main`: 把本地 read/ 目录推到 meisijiya/reading - expect 远程仓库不再为空
+- [x] 9. 远程启用 GitHub Pages: 在 https://github.com/meisijiya/reading/settings/pages 选 Source=GitHub Actions（或 gh CLI 启用） - expect 首次部署可见
+- [x] 10. 验证首页与两本书入口可达（curl 或浏览器） - expect 两本书入口在 nav 出现且点击可达
 
 ## Final verification wave
 
-- [ ] F1. 站点可访问性: `curl -I https://meisijiya.github.io/reading/` 返回 200 - evidence: 命令输出截图或返回头
-- [ ] F2. 两本书入口存在: 站点首页与 nav 含两本书卡片/链接 - evidence: 浏览器截图 + nav 文本 grep
-- [ ] F3. 同步规则可执行: 模拟"加一个测试目录 `tmp-book-test/`（含 dummy INDEX.md）→ commit → push"，CI 自动扫描并部署，验证 tmp-book-test 出现在 nav 后**回滚测试目录** - evidence: Actions run + nav 截图 + 回滚 commit
-- [ ] F4. AGENTS.md 规则三可读: cat AGENTS.md 在规则三章节可见触发/机制/约束三段 - evidence: 文件输出节选
-- [ ] F5. design.md 在位: design.md 在仓库根，包含视觉/结构/交互/响应式四节 - evidence: ls + wc -l
-- [ ] F6. MkDocs strict 构建零警告: `mkdocs build --strict` exit 0 且无 warning - evidence: 本地构建输出
+- [x] F1. 站点可访问性: `curl -I https://meisijiya.github.io/reading/` 返回 200 - evidence: 命令输出截图或返回头
+- [x] F2. 两本书入口存在: 站点首页与 nav 含两本书卡片/链接 - evidence: 浏览器截图 + nav 文本 grep
+- [x] F3. 同步规则可执行: 模拟"加一个测试目录 `tmp-book-test/`（含 dummy INDEX.md）→ commit → push"，CI 自动扫描并部署，验证 tmp-book-test 出现在 nav 后**回滚测试目录** - evidence: Actions run + nav 截图 + 回滚 commit
+- [x] F4. AGENTS.md 规则三可读: cat AGENTS.md 在规则三章节可见触发/机制/约束三段 - evidence: 文件输出节选
+- [x] F5. design.md 在位: design.md 在仓库根，包含视觉/结构/交互/响应式四节 - evidence: ls + wc -l
+- [x] F6. MkDocs strict 构建零警告: `mkdocs build --strict` exit 0 且无 warning - evidence: 本地构建输出
 
 ## Risks / Tradeoffs（提前披露）
 - **mkdocs-awesome-nav 自动扫描要求每本书目录下有可识别的入口文件**——故 INDEX.md 是强制锚点；若 worker 蒸馏新书忘了 INDEX.md，F3 验证会失败，故 AGENTS.md 规则三明确这点

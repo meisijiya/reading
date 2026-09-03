@@ -29,6 +29,7 @@ htmlcov/
 
 # === 本地草稿(不入版本控制) ===
 .omo/drafts/
+.omo/run-continuation/
 
 # === 编辑器 / 系统垃圾 ===
 .DS_Store
