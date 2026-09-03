@@ -2,7 +2,7 @@ site_name: 读书知识库
 site_url: https://meisijiya.github.io/reading/
 repo_url: https://github.com/meisijiya/reading
 
-docs_dir: docs
+docs_dir: .
 site_dir: site
 use_directory_urls: true
 
