@@ -1,0 +1,704 @@
+{
+  "source": "PDF (LaTeX/xdvipdfmx)",
+  "pdf": "agentic-ai-guide-zh-v1.1.0.pdf",
+  "page_count": 599,
+  "granularity": "level-2 bookmark (每章一个文件)",
+  "chapters": [
+    {
+      "uid": "ch00",
+      "title": "前置：免责声明 / 关于作者 / 前言 / 引言 / 缩略语表",
+      "pdf_pages": [
+        25,
+        37
+      ],
+      "sha256": "3c92a47370e20e3296e22a330b806da1f7fb37aae80f03708dc1a9f3cc856563",
+      "bytes": 30336,
+      "sections": []
+    },
+    {
+      "uid": "ch01",
+      "title": "LLM 架构与优化方法",
+      "part": "I 基础",
+      "pdf_pages": [
+        38,
+        106
+      ],
+      "sha256": "3b14a6fe59ecffc677f5aecc2b13045223e4da5332d522115f949fd6b100e491",
+      "bytes": 150849,
+      "sections": [
+        "LLM 工作原理：直觉概览",
+        "分词（Tokenization）",
+        "Transformer 架构",
+        "预测头：Transformer 的输出",
+        "LLM 训练的优化理论",
+        "FlashAttention——算法与硬件感知",
+        "预训练：最佳实践",
+        "监督微调（Supervised Fine-Tuning，SFT）",
+        "LoRA 与参数高效微调",
+        "专家混合模型（Mixture of Experts，MoE）",
+        "LLM 训练中的多样性",
+        "文本生成：解码方法",
+        "Prompt 工程",
+        "模型压缩方法",
+        "投机解码（Speculative Decoding）方法",
+        "幻觉检测",
+        "LLM 安全与负责任 AI"
+      ]
+    },
+    {
+      "uid": "ch02",
+      "title": "面向 LLM 的系统基础",
+      "part": "",
+      "pdf_pages": [
+        107,
+        120
+      ],
+      "sha256": "f39849f9f0622ef028354458eee5bd8b8bc8d97f5296613f2923b74b3af1cebc",
+      "bytes": 31490,
+      "sections": [
+        "GPU 架构——从硅片到 LLM 训练",
+        "vLLM——分页注意力与高吞吐推理"
+      ]
+    },
+    {
+      "uid": "ch03",
+      "title": "强化学习导论",
+      "part": "",
+      "pdf_pages": [
+        121,
+        133
+      ],
+      "sha256": "7fbd2d023767265edc6670108d68c0d65a3bdc8e0952eed26ac4537189eb98b4",
+      "bytes": 25689,
+      "sections": [
+        "马尔可夫决策过程（Markov Decision Process，MDP）",
+        "核心概念与定义",
+        "强化学习方法的分类",
+        "时序差分（Temporal Difference，TD）学习",
+        "Q-Learning",
+        "策略梯度方法——REINFORCE",
+        "Actor-Critic 方法",
+        "广义优势估计（Generalized Advantage Estimation，GAE）",
+        "同策略 vs 异策略——详细对比",
+        "基于模型 vs 无模型",
+        "奖励塑形（Reward Shaping）"
+      ]
+    },
+    {
+      "uid": "ch04",
+      "title": "大语言模型的强化学习基础",
+      "part": "II 面向大语言模型的强化学习方法",
+      "pdf_pages": [
+        133,
+        136
+      ],
+      "sha256": "2e62faf561cb08afb14a3c588653be777b306e0c71a019c14ea4f5323ec3da90",
+      "bytes": 7023,
+      "sections": [
+        "大语言模型 RL 的两大范式",
+        "将文本生成建模为 MDP",
+        "RLHF 流水线",
+        "本部分路线图"
+      ]
+    },
+    {
+      "uid": "ch05",
+      "title": "PPO——近端策略优化",
+      "part": "",
+      "pdf_pages": [
+        137,
+        144
+      ],
+      "sha256": "7fce7234e23654f2371f25cdeffc8d02cd708d28ffc648ffe409f8c7ca119462",
+      "bytes": 17253,
+      "sections": [
+        "动机与历史",
+        "Clipped 目标",
+        "完整的 PPO Loss",
+        "PPO Gradient 与更新规则的推导",
+        "Rollout Buffer 与 Rollout",
+        "用于 RLHF 的 PPO：完整循环",
+        "细节机制：Logits 与 Policy 更新",
+        "TRL 实现",
+        "关键超参"
+      ]
+    },
+    {
+      "uid": "ch06",
+      "title": "DPO——直接偏好优化",
+      "part": "",
+      "pdf_pages": [
+        145,
+        157
+      ],
+      "sha256": "115da81bd9ea945a686806192dac4a56915c380a6261c6932ef08d7af6ddf642",
+      "bytes": 24746,
+      "sections": [
+        "动机",
+        "数学推导",
+        "Gradient 分析",
+        "TRL 实现",
+        "DPO 的完整机制",
+        "DPO 变体及其各自的失败场景",
+        "beta Selection Guide",
+        "DPO 的 Batch Size 配置与扩展",
+        "DPO 扩展与变体"
+      ]
+    },
+    {
+      "uid": "ch07",
+      "title": "GRPO —— 组相对策略优化",
+      "part": "",
+      "pdf_pages": [
+        158,
+        172
+      ],
+      "sha256": "d4fe10df4abcbc183b743511901578cd06036d4b4a45c9abd2e24759aa3ec9e9",
+      "bytes": 30943,
+      "sections": [
+        "动机",
+        "算法",
+        "TRL 实现",
+        "组大小分析",
+        "GRPO 变体与扩展"
+      ]
+    },
+    {
+      "uid": "ch08",
+      "title": "偏好优化变体",
+      "part": "",
+      "pdf_pages": [
+        173,
+        180
+      ],
+      "sha256": "118d70041000aae076f7b879cbcc452c45fa95d9ac7c889f3540e1ae51ae416b",
+      "bytes": 13770,
+      "sections": [
+        "Online DPO",
+        "KTO —— Kahneman-Tversky Optimization",
+        "IPO —— Identity Preference Optimization",
+        "ORPO —— Odds Ratio Preference Optimization",
+        "Best-of-N 采样（拒绝采样）",
+        "总结：如何选择对齐方法"
+      ]
+    },
+    {
+      "uid": "ch09",
+      "title": "奖励模型训练",
+      "part": "",
+      "pdf_pages": [
+        181,
+        188
+      ],
+      "sha256": "cafdf84eba1808229f94a50a464f1746cfcd4da4b31b7450a40fdfd567afc42f",
+      "bytes": 13846,
+      "sections": [
+        "Bradley-Terry 模型 —— 完整推导",
+        "奖励模型架构",
+        "奖励模型训练技巧",
+        "过程奖励模型 vs 结果奖励模型",
+        "RLVR 中基于规则的 Reward",
+        "多目标 Reward —— 组合策略",
+        "基于列表排序的 Reward"
+      ]
+    },
+    {
+      "uid": "ch10",
+      "title": "SFT 最佳实践与技巧",
+      "part": "",
+      "pdf_pages": [
+        189,
+        196
+      ],
+      "sha256": "530a4e023d1f077f98815e835e21436488ee6924aa84aa62dc244fd2d50020e1",
+      "bytes": 15040,
+      "sections": [
+        "序列打包以提升效率",
+        "Chat 模板与格式化",
+        "仅对补全部分进行 mask",
+        "多任务 SFT 的数据混合策略",
+        "当 SFT 反而有害 —— 灾难性遗忘与对齐税",
+        "与 RL 的关系 —— SFT 质量决定 RL 上限"
+      ]
+    },
+    {
+      "uid": "ch11",
+      "title": "大规模系统架构与基础设施",
+      "part": "",
+      "pdf_pages": [
+        197,
+        219
+      ],
+      "sha256": "78db690b3f0efdc81abf422b30b0023e72791f281dee542ab3dec296b76008ec",
+      "bytes": 45547,
+      "sections": [
+        "4 模型显存挑战",
+        "并行策略详解",
+        "生成瓶颈：定量分析",
+        "解耦式架构：生产级设计",
+        "权重同步策略",
+        "显存优化技术",
+        "大规模容错",
+        "端到端延迟拆解",
+        "监控与可观测性",
+        "网络拓扑与通信模式",
+        "训练吞吐与模型 FLOPs 利用率",
+        "成本分析与云端部署",
+        "分布式 Checkpointing",
+        "硬件选型指南",
+        "RL 训练的优化器配置"
+      ]
+    },
+    {
+      "uid": "ch12",
+      "title": "LLM 智能体训练",
+      "part": "",
+      "pdf_pages": [
+        220,
+        248
+      ],
+      "sha256": "0d1795a473423972e07b7e4b200787112512d6b64ae58c2bd55a27d36575e36c",
+      "bytes": 63047,
+      "sections": [
+        "动机：从聊天机器人到自主智能体",
+        "LLM Agent 的轨迹缓冲区",
+        "操作范式",
+        "范式对比",
+        "Agent RL 的主要技术",
+        "用例：用于生产力副驾的 Agent RL",
+        "用例：从零构建一个研究 Agent",
+        "LLM Agent 的 SOTA RL",
+        "面向 Agent 训练的交互式 RL 环境"
+      ]
+    },
+    {
+      "uid": "ch13",
+      "title": "面向大型推理模型的强化学习",
+      "part": "III 推理",
+      "pdf_pages": [
+        248,
+        273
+      ],
+      "sha256": "d1d07b7ea75bee3fa36bec5579d53755440158124dfaf9647f039d31f719c380",
+      "bytes": 56248,
+      "sections": [
+        "动机与背景",
+        "测试时扩展方法",
+        "DeepSeek-R1",
+        "OpenAI o1/o3 系列",
+        "QwQ 与 Qwen 推理模型",
+        "关键方法及其数学基础",
+        "推理的扩展律",
+        "推理模型比较",
+        "推理时算力扩展定律",
+        "面向推理的同策略自蒸馏",
+        "总结与开放问题"
+      ]
+    },
+    {
+      "uid": "ch14",
+      "title": "LLM 评估",
+      "part": "IV 评估",
+      "pdf_pages": [
+        273,
+        289
+      ],
+      "sha256": "c3c7fedd73af5047540f6a1964dec06b90df5d5ec7012d1072dae1a103d507c0",
+      "bytes": 35157,
+      "sections": [
+        "评估方案设计",
+        "评估数据采集",
+        "评估用合成数据生成",
+        "排序任务的指标",
+        "生成任务的指标",
+        "Agent 任务的指标",
+        "LLM-as-Judge",
+        "评估陷阱"
+      ]
+    },
+    {
+      "uid": "ch15",
+      "title": "智能体 AI 简介",
+      "part": "V 智能体 AI（Agentic AI）",
+      "pdf_pages": [
+        289,
+        292
+      ],
+      "sha256": "8cb0db3fafe5c54e44d95757dcb83fe46aad88a6c8542041102fe73cf5f10ded",
+      "bytes": 7579,
+      "sections": []
+    },
+    {
+      "uid": "ch16",
+      "title": "检索增强生成（RAG）",
+      "part": "",
+      "pdf_pages": [
+        293,
+        315
+      ],
+      "sha256": "39b3dc36032c7eddd3754cf8493c36fd851dc835298a150ab7ce911c4ce1e014",
+      "bytes": 51216,
+      "sections": [
+        "动机与问题陈述",
+        "核心 RAG 架构",
+        "检索方法",
+        "分块策略",
+        "高级 RAG 模式",
+        "高效 RAG 解码：REFRAG",
+        "智能体 RAG",
+        "评测",
+        "生产考量",
+        "RAG 与微调的协同",
+        "各种 RAG 方法的综合对比"
+      ]
+    },
+    {
+      "uid": "ch17",
+      "title": "智能体记忆系统",
+      "part": "",
+      "pdf_pages": [
+        316,
+        340
+      ],
+      "sha256": "171b96117f9b854c534b2bbe6aaa121dd8dbec8d29272a372d3d1a03e35217aa",
+      "bytes": 56412,
+      "sections": [
+        "动机：为什么 Agent 需要记忆",
+        "记忆类型分类",
+        "记忆架构",
+        "记忆操作",
+        "多轮对话中的记忆",
+        "多智能体系统中的记忆",
+        "用强化学习训练记忆系统",
+        "记忆方案的对比",
+        "评估记忆系统",
+        "实现模式",
+        "智能体记忆的最新进展",
+        "主动记忆架构",
+        "小结"
+      ]
+    },
+    {
+      "uid": "ch18",
+      "title": "Agent Harness —— 上下文管理与编排",
+      "part": "",
+      "pdf_pages": [
+        341,
+        364
+      ],
+      "sha256": "e37dfacb57a50a80e1546f161007762307722d9e482ba925e9515007c4677dcb",
+      "bytes": 47209,
+      "sections": [
+        "什么是 Agent Harness？",
+        "Context Window 管理",
+        "Prompt 架构",
+        "工具集成与执行",
+        "编排模式",
+        "状态管理",
+        "错误处理与恢复",
+        "扩展与生产环境关注点",
+        "框架对比",
+        "实现：生产级 Agent Harness"
+      ]
+    },
+    {
+      "uid": "ch19",
+      "title": "循环工程（Loop Engineering）",
+      "part": "",
+      "pdf_pages": [
+        365,
+        377
+      ],
+      "sha256": "3dd4a86a66989cabb6679c49ea09bbc167b4dbcdbf3769042af37f9ddea4d24a",
+      "bytes": 34105,
+      "sections": [
+        "上下文工程：循环之下的那一层",
+        "把循环工程视为推理时强化学习",
+        "生产级循环的解剖",
+        "循环的伪代码",
+        "循环模式",
+        "验证工程",
+        "终止工程",
+        "失败模式与反模式",
+        "生产级循环架构",
+        "长时程循环中的上下文管理",
+        "何时不该使用循环",
+        "循环的经济学",
+        "历史背景与相关工作",
+        "小结"
+      ]
+    },
+    {
+      "uid": "ch20",
+      "title": "Agent 设计模式",
+      "part": "",
+      "pdf_pages": [
+        378,
+        382
+      ],
+      "sha256": "136647f0e8558f0d0832fe0e9c10a5c45bfdcc835d74acc52e8c562dd5a78914",
+      "bytes": 11866,
+      "sections": [
+        "工作流模式",
+        "自主 Agent 模式",
+        "设计原则",
+        "模式选择指南"
+      ]
+    },
+    {
+      "uid": "ch21",
+      "title": "Agent 环境与基准",
+      "part": "",
+      "pdf_pages": [
+        383,
+        397
+      ],
+      "sha256": "5a810dc211ac06e8c6ea472d71b352df02d34ce9e36cc4eebc8a37b544c2a1f0",
+      "bytes": 38448,
+      "sections": [
+        "动机：为什么 Agent 需要环境",
+        "环境设计原则",
+        "Agent 环境的类型",
+        "OpenEnv：标准化的 Agent 环境接口",
+        "构建自定义环境",
+        "环境–Agent 接口模式",
+        "评估 harness 设计",
+        "代码示例：最小的自定义 LLM Agent 环境",
+        "主要 Agent 环境对比",
+        "小结"
+      ]
+    },
+    {
+      "uid": "ch22",
+      "title": "模型上下文协议（Model Context Protocol, MCP）",
+      "part": "",
+      "pdf_pages": [
+        398,
+        416
+      ],
+      "sha256": "af26aefc87c89218db0304aa31627b81f996060a9dc49a5829159ce00895e0c8",
+      "bytes": 36779,
+      "sections": [
+        "动机：工具集成问题",
+        "架构概览",
+        "核心原语",
+        "协议规范",
+        "Tool 定义与发现",
+        "安全模型",
+        "实现模式",
+        "MCP 生态",
+        "MCP vs. 其他方案",
+        "MCP 在 Agent 训练中的作用",
+        "小结"
+      ]
+    },
+    {
+      "uid": "ch23",
+      "title": "Agent Skills",
+      "part": "",
+      "pdf_pages": [
+        417,
+        421
+      ],
+      "sha256": "13805fb727b58446cb8d25f649b39aab002ac4c36ac4508c2357ee73d7034962",
+      "bytes": 9443,
+      "sections": [
+        "什么是 Skill？",
+        "Skill 架构模式",
+        "案例研究：Anthropic 的 Agent 设计",
+        "Skill 生命周期",
+        "Skill 注册表与市场",
+        "Skill vs. 微调"
+      ]
+    },
+    {
+      "uid": "ch24",
+      "title": "智能体到智能体通信（Agent-to-Agent, A2A）",
+      "part": "",
+      "pdf_pages": [
+        422,
+        442
+      ],
+      "sha256": "faff5d0ce119d88763e54c12105648b1e3a5dca80318f920b747bd3d141d7ccc",
+      "bytes": 43889,
+      "sections": [
+        "动机：为何 Agent 必须相互通信",
+        "Google A2A 协议",
+        "通信模式",
+        "Agent 发现与路由",
+        "消息格式与 Schema",
+        "协调协议",
+        "A2A 与 MCP：互补的协议",
+        "多 Agent 系统中的安全与信任",
+        "实现示例：多 Agent 研究工作流",
+        "小结"
+      ]
+    },
+    {
+      "uid": "ch25",
+      "title": "多智能体系统（Multi-Agent Systems）",
+      "part": "",
+      "pdf_pages": [
+        443,
+        462
+      ],
+      "sha256": "0ccc530f6b3346da9c08811fb9b56cbb44343fc646763fc9b608f4fbd0934c32",
+      "bytes": 41381,
+      "sections": [
+        "动机：为什么需要多个 Agent？",
+        "多智能体架构",
+        "协调机制",
+        "通信协议",
+        "角色设计与专门化",
+        "面向 LLM 的多 Agent 模式",
+        "用强化学习训练多智能体系统",
+        "挑战与解决方案",
+        "现实世界中的多智能体应用",
+        "架构对比",
+        "自进化 Agent：BDI 遇上 LLM",
+        "小结"
+      ]
+    },
+    {
+      "uid": "ch26",
+      "title": "Agent 开发框架",
+      "part": "",
+      "pdf_pages": [
+        463,
+        494
+      ],
+      "sha256": "65b093c982e0f37b541d174d80e1c574ca53a7904dda7f74903e44a693003f42",
+      "bytes": 68113,
+      "sections": [
+        "动机：工程能力的鸿沟",
+        "Agent 开发生命周期",
+        "主流框架深度剖析",
+        "开源 Agent 工具链",
+        "Agent 测试与评测",
+        "可观测性与调试",
+        "生产部署模式",
+        "框架对比",
+        "完整实现示例：生产级研究型 Agent",
+        "小结"
+      ]
+    },
+    {
+      "uid": "ch27",
+      "title": "Agentic UI 框架",
+      "part": "",
+      "pdf_pages": [
+        495,
+        515
+      ],
+      "sha256": "822885174708d9a48560e90d76447bc64bc376862c614ec5e4b327652ad58ab2",
+      "bytes": 48646,
+      "sections": [
+        "动机：超越聊天框",
+        "Agent 的 UI 范式",
+        "Agent 的关键 UI 组件",
+        "框架与库",
+        "生成式 UI",
+        "流式与实时模式",
+        "人机协同 UI 设计",
+        "无障碍与信任",
+        "实现示例：全栈 Agent 化 UI",
+        "小结"
+      ]
+    },
+    {
+      "uid": "ch28",
+      "title": "测验题与详细解答",
+      "part": "VI 自测与参考",
+      "pdf_pages": [
+        515,
+        560
+      ],
+      "sha256": "b463913a8ebff047250d60dae02cc113b00496eaa8aca2544c12d830715b5ed5",
+      "bytes": 118753,
+      "sections": [
+        "基础题",
+        "核心算法题",
+        "系统设计题",
+        "实战与调试题",
+        "GRPO 变体与高级 RL 题",
+        "DPO 扩展题",
+        "GPU 架构与硬件题",
+        "优化与训练题",
+        "Reward 模型与 SFT 题",
+        "系统架构扩展题",
+        "Transformer 架构问题",
+        "FlashAttention 问题",
+        "LoRA 与 PEFT 问题",
+        "模型压缩问题",
+        "专家混合（Mixture of Experts）问题",
+        "训练中的多样性问题",
+        "推测解码（Speculative Decoding）问题",
+        "Agent 强化学习问题",
+        "列表式 Reward 与高级 RM 问题",
+        "大型推理模型的 RL 问题",
+        "LLM 评估问题",
+        "Agent 记忆问题",
+        "Agent 编排问题",
+        "MCP 协议问题",
+        "Agent 通信（A2A）问题",
+        "多 Agent 系统问题",
+        "Agent 开发框架问题",
+        "Agent 环境问题",
+        "Agent UI 框架问题",
+        "RAG 与 Agent 化 RAG 问题"
+      ]
+    },
+    {
+      "uid": "ch29",
+      "title": "速查手册",
+      "part": "",
+      "pdf_pages": [
+        561,
+        567
+      ],
+      "sha256": "f36ae09308b8c6797325ca27cefab622bbc1f532dd8117153181a0d044188d1c",
+      "bytes": 12562,
+      "sections": [
+        "核心 RL 与对齐公式",
+        "Transformer 与架构公式",
+        "解码方法",
+        "系统与并行",
+        "GPU 硬件规格",
+        "超参数范围",
+        "TRL API 速查",
+        "RAG 流水线公式",
+        "智能体设计模式",
+        "智能体通信协议",
+        "上下文窗口预算",
+        "常见失效模式与修复",
+        "方法选择决策树",
+        "评估指标",
+        "推理与测试时扩展",
+        "记忆系统类型",
+        "MCP 速查",
+        "A2A 协议速查",
+        "智能体框架对比",
+        "智能体 RL 公式",
+        "智能体安全检查清单",
+        "智能体评估指标",
+        "关键智能体基准"
+      ]
+    },
+    {
+      "uid": "ch30",
+      "title": "总结与未来方向",
+      "part": "",
+      "pdf_pages": [
+        568,
+        599
+      ],
+      "sha256": "2df5ef3615fbad169587699371df2b5dbf281099d33034c43a56990f5bf8c04f",
+      "bytes": 94991,
+      "sections": [
+        "总结",
+        "前路：开放挑战",
+        "延伸阅读"
+      ]
+    }
+  ]
+}

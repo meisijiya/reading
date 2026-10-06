@@ -6,6 +6,11 @@ docs_dir: docs
 site_dir: site
 use_directory_urls: true
 
+# 原始 epub 归档不进站点：体积大、文件名超 Windows 260 字符上限会让 build 崩溃，
+# 且 book/ 下已有一份副本。原文正文在 00-原书档案/fulltext/ 里，是真正要发布的东西。
+exclude_docs: |
+  **/00-原书档案/epub/*
+
 theme:
   name: material
   language: zh
@@ -95,14 +100,14 @@ nav:
     - "解构领域驱动设计/05-融合/README.md"
     - "解构领域驱动设计/06-附录/README.md"
     - "解构领域驱动设计/99-速查表.md"
-  - "AI Prompt Engineering: The 2026 Guide":
-    - "AI Prompt Engineering: The 2026 Guide/INDEX.md"
-    - "AI Prompt Engineering: The 2026 Guide/01-基础与导读/README.md"
-    - "AI Prompt Engineering: The 2026 Guide/02-场景-Prompt-模板库/README.md"
-    - "AI Prompt Engineering: The 2026 Guide/03-进阶与商业应用/README.md"
-    - "AI Prompt Engineering: The 2026 Guide/04-参考附录-A-E/README.md"
-    - "AI Prompt Engineering: The 2026 Guide/05-实战卷-F-J-与作者/README.md"
-    - "AI Prompt Engineering: The 2026 Guide/99-速查表.md"
+  - "AI Prompt Engineering The 2026 Guide":
+    - "AI Prompt Engineering The 2026 Guide/INDEX.md"
+    - "AI Prompt Engineering The 2026 Guide/01-基础与导读/README.md"
+    - "AI Prompt Engineering The 2026 Guide/02-场景-Prompt-模板库/README.md"
+    - "AI Prompt Engineering The 2026 Guide/03-进阶与商业应用/README.md"
+    - "AI Prompt Engineering The 2026 Guide/04-参考附录-A-E/README.md"
+    - "AI Prompt Engineering The 2026 Guide/05-实战卷-F-J-与作者/README.md"
+    - "AI Prompt Engineering The 2026 Guide/99-速查表.md"
   - "AI Agents in Depth":
     - "AI Agents in Depth/INDEX.md"
     - "AI Agents in Depth/00-引言与后记/README.md"
@@ -117,6 +122,16 @@ nav:
     - "AI Agents in Depth/09-多模态与实时交互/README.md"
     - "AI Agents in Depth/10-多Agent协作/README.md"
     - "AI Agents in Depth/99-速查表.md"
+  - "智能体AI漫游指南（从基础到系统）":
+    - "智能体AI漫游指南（从基础到系统）/INDEX.md"
+    - "智能体AI漫游指南（从基础到系统）/00-导读与前置/README.md"
+    - "智能体AI漫游指南（从基础到系统）/01-基础/README.md"
+    - "智能体AI漫游指南（从基础到系统）/02-大模型强化学习/README.md"
+    - "智能体AI漫游指南（从基础到系统）/03-推理与评估/README.md"
+    - "智能体AI漫游指南（从基础到系统）/04-智能体AI核心/README.md"
+    - "智能体AI漫游指南（从基础到系统）/05-智能体AI工程/README.md"
+    - "智能体AI漫游指南（从基础到系统）/06-自测与参考/README.md"
+    - "智能体AI漫游指南（从基础到系统）/99-速查表.md"
 
 markdown_extensions:
   - admonition
