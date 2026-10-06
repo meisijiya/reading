@@ -30,6 +30,8 @@ htmlcov/
 # === 本地草稿(不入版本控制) ===
 .omo/drafts/
 .omo/run-continuation/
+# 蒸馏过程的临时脚本、探查产物、旧包备份
+.scratch/
 
 # === 编辑器 / 系统垃圾 ===
 .DS_Store
