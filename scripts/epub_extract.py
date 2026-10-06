@@ -6,7 +6,10 @@ Per AGENTS.md 规则四 (epub-distill):
 - title prefix preserves Part / chapter number
 
 Usage:
-  python3 scripts/epub_extract.py <epub_path> <book_root_dir>
+  python3 scripts/epub_extract.py <epub_path> <book_root_dir> [naming]
+
+  naming: flat  -> ch01.md, ch02.md ...（与 pdf_extract.py 输出对齐）
+         默认     -> uid-01-<slug>.md
 
 Example:
   python3 scripts/epub_extract.py \
@@ -186,10 +189,11 @@ def html_to_markdown(html: str) -> str:
 
 
 def main():
-    if len(sys.argv) != 3:
+    if len(sys.argv) not in (3, 4):
         print(__doc__)
         sys.exit(2)
     src, root = sys.argv[1], sys.argv[2]
+    naming = sys.argv[3] if len(sys.argv) == 4 else "slug"
     root_path = Path(root).resolve()
     fulltext_dir = root_path / "00-原书档案" / "fulltext"
     fulltext_dir.mkdir(parents=True, exist_ok=True)
@@ -224,11 +228,18 @@ def main():
 
     # Index chapters → assign uids
     rows = []
-    excluded_titles = {"index", "about the author"}
+    excluded_titles = {
+        "index", "about the author",
+        "扉页", "目录", "版权页", "版权声明", "封面", "书名页", "扉页与版权",
+        "toc", "table of contents", "contents", "title page", "copyright",
+    }
+    drop_titles = {"扉页", "目录", "版权页", "版权声明", "封面", "书名页", "扉页与版权"}
     counter = 1
     for kind, node in l1:
         ttl = node.title.strip()
         if ttl.lower() in excluded_titles:
+            continue
+        if ttl in drop_titles:
             continue
         # Chapter number detection
         m = re.match(r"^(\d+)\.\s+(.*)$", ttl)
@@ -239,9 +250,10 @@ def main():
         else:
             ch_num = ""
             ch_title = ttl
-            kind_label = "preface" if "preface" in ttl.lower() else (
-                "epilogue" if "epilogue" in ttl.lower() or "afterword" in ttl.lower() else "frontmatter"
-            )
+            low = ttl.lower()
+            kind_label = ("epilogue" if re.search(r"后记|后序|尾声|结语|附录|afterword|epilogue", ttl)
+                          else "preface" if re.search(r"引言|前言|序$|序言|preface|foreword|introduction", ttl)
+                          else "chapter")
         uid = f"{counter:02d}"
         rows.append({
             "uid": uid,
@@ -254,14 +266,35 @@ def main():
         })
         counter += 1
 
-    # Extract content
+    # Extract content FIRST, then drop empty shells and renumber uids.
+    # （扉页/目录在部分 epub 中标题不在排除集里，只能靠内容体积识别；
+    #   先过滤再编号，uid 才连续，抽出的 chNN.md 才能与 toc 对得上。）
+    payload = {}
     for row in rows:
         html = html_for_href(book, row["href"])
         md_text = html_to_markdown(html)
-        word_count = len(md_text.split())
-        row["wordCount"] = word_count
+        payload[row["uid"]] = md_text
+
+    kept = []
+    for row in rows:
+        md_text = payload[row["uid"]]
+        if len(md_text.strip()) < 80:
+            print(f"  [skip] {row['uid']} {row['title']} —— 空壳（{len(md_text.strip())} 字符）")
+            continue
+        row["_md"] = md_text
+        kept.append(row)
+
+    rows = []
+    for i, row in enumerate(kept, 1):
+        row["uid"] = f"{i:02d}"
+        rows.append(row)
+
+    for row in rows:
+        md_text = row.pop("_md")
+        row["wordCount"] = len(md_text.split())
         file_slug = slug(row["chapterTitle"])
-        filename = f"uid-{row['uid']}-{file_slug}.md"
+        filename = (f"ch{row['uid']}.md" if naming == "flat"
+                    else f"uid-{row['uid']}-{file_slug}.md")
         fulltext_path = fulltext_dir / filename
         preamble = PREAMBLE.format(
             src=src_path.name, sha=sha, uid=row["uid"],
