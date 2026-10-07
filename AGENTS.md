@@ -130,6 +130,7 @@ export WEREAD_API_KEY=$(grep -oP 'WEREAD_API_KEY=\K\S+' ~/.bashrc | tail -1)
 5. **INDEX.md 提及的归档文件路径**（`toc.md` / `book-meta.json` / `hot-highlights.json` / `toc.json`）**用 markdown 链接**，让"AI 检索建议"段落也成可点击入口。
 6. **相对路径正确**：模块 README 在 `NN-部/` 子目录，链接归档要 `../00-原书档案/...`；INDEX.md 在书根但被生成到 `INDEX/index.html`，mkdocs 自动加 `../`（不写错就行）。中文文件名里 `"` 和 `"` 是不同字符（U+0022 ≠ U+201C/U+201D），写错会导致 strict build WARNING。
 7. **`mkdocs build --strict` 必须零警告通过才允许 push**。有 WARNING = 有死链。
+8. **改了 `docs/assets/` 下的 CSS/JS，就必须跑完三条 UI 门禁**（见下）。这些改动全靠运行时从既有 DOM 推导结构，构建和链接检查都发现不了它们——它们坏掉时不报错、不掉链接，只是页面悄悄变形。
 
 **验收**（push 前必跑）：
 
@@ -139,6 +140,17 @@ python3 scripts/check_site_links.py                       # 期望 OK=N/N FAIL=0
 ```
 
 （可选：传本地预览地址做集成测试，如 `python3 scripts/check_site_links.py http://127.0.0.1:8765/reading`。）
+
+**UI 门禁**（只有动了 `docs/assets/` 才需要；三个脚本都要先有本地预览在跑）：
+
+```bash
+python -m http.server 8766 --bind 127.0.0.1 --directory site   # 先起预览
+python scripts/ui/check_evidence.py          # 620 条结构断言：证据分带 / 卡号 / 右栏 / 对比度
+python scripts/ui/sweep_all.py               # 全站每个模块页扫不变量，不抽样本
+python scripts/ui/check_text_integrity.py    # 正文有没有被误吃 / 出处谎报 / 编号造假
+```
+
+三条各自管一件事，**故意不重叠**：第一条只问「标记摘没摘干净」，第二条扫覆盖面，第三条专问相反的方向——前缀摘除是按码元数盲摘的，切点算错会吃掉正文，而那种事故在「标记摘干净了」的前提下完全不可见。
 
 **自检目标**：被引用的所有 URL 100% 返回 200；nav 展开、底部 Previous/Next、速览表/卡片/归档文件链接全部可点击；epub 来源书 14 章完整原文从 INDEX 一步直达（不超 2 次跳转）。
 

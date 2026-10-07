@@ -17,7 +17,11 @@ theme:
   features:
     - navigation.instant
     - navigation.tracking
-    - navigation.tabs
+    # navigation.tabs 已停用：10 本书名（含「凤凰架构：构建可靠的大型分布式系统」这类 16 字名）
+    # 在 1440px 宽下只能放下 7 本，最后一项被硬截断成「解构领域驱动设」。
+    # 顶部 tab 行塞不下就等于坏导航，改为左侧栏承担全部导航，首页作为书的总览入口。
+    # 若要恢复，删掉下面这行注释即可，无需改动其他文件。
+    # - navigation.tabs
     - navigation.sections
     - navigation.indexes
     - navigation.top
@@ -29,20 +33,26 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: indigo
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-4
         name: 切换到暗色模式
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-4
         name: 切换到亮色模式
   icon:
     repo: fontawesome/brands/github
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra_javascript:
+  - assets/javascripts/evidence.js
 
 plugins:
   - search:
@@ -143,7 +153,11 @@ markdown_extensions:
   - toc:
       permalink: true
   - pymdownx.details
-  - pymdownx.emoji
+  # 必须显式指定 index/generator，否则 `:material-robot:` 这类简写不会被识别，
+  # 会原样输出成字面文本（首页书卡片就是这样坏的）。UTF-8 emoji 走 twemoji 转 SVG。
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.keys
