@@ -60,8 +60,9 @@ export WEREAD_API_KEY=$(grep -oP 'WEREAD_API_KEY=\K\S+' ~/.bashrc | tail -1)
 
 **机制**：GitHub Actions 在 push 时自动构建并发布 MkDocs Material 站点：
 
-- 触发器：`.github/workflows/mkdocs.yml` 监听 main 分支 push，无需手动触发。
-- 构建：MkDocs Material 主题 + `mkdocs gh-deploy`（或 peaceiris/actions-gh-deploy）一键发布到 gh-pages。
+- 触发器：`.github/workflows/pages.yml` 监听 main 分支 push，无需手动触发（另有 `workflow_dispatch` 可手动重跑）。
+- 构建：GitHub Actions 装 `requirements.txt` 后跑 `mkdocs build --strict`，用 `actions/upload-pages-artifact` + `actions/deploy-pages` 发布到 gh-pages。
+- CI 不跑 UI 门禁（runner 里没有 Playwright），UI 层回归只能靠本地按规则五跑 `scripts/ui/` 那三条。
 - 导航生成：`mkdocs-awesome-nav` 自动扫描仓库根所有 `<书名>/INDEX.md` 并入 nav，**完全不用手改 `mkdocs.yml` 的 nav 段**。
 - 入口渲染：`mkdocs-section-index` 把每本书的 INDEX.md 渲染成 section 入口页，点击书名直达知识包首页。
 - 透明性：book 目录的增减对 worker 完全透明。建好目录推上去，站点自动长出新书卡片。
