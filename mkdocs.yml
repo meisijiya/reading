@@ -142,6 +142,15 @@ nav:
     - "智能体AI漫游指南（从基础到系统）/05-智能体AI工程/README.md"
     - "智能体AI漫游指南（从基础到系统）/06-自测与参考/README.md"
     - "智能体AI漫游指南（从基础到系统）/99-速查表.md"
+  - "AI Engineering (Chip Huyen)":
+    - "AI Engineering (Chip Huyen)/INDEX.md"
+    - "AI Engineering (Chip Huyen)/01-基础与理解/README.md"
+    - "AI Engineering (Chip Huyen)/02-评估方法/README.md"
+    - "AI Engineering (Chip Huyen)/03-Prompt与上下文/README.md"
+    - "AI Engineering (Chip Huyen)/04-微调与数据/README.md"
+    - "AI Engineering (Chip Huyen)/05-推理优化与架构/README.md"
+    - "AI Engineering (Chip Huyen)/06-尾声/README.md"
+    - "AI Engineering (Chip Huyen)/99-速查表.md"
 
 markdown_extensions:
   - admonition

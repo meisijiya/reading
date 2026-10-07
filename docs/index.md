@@ -95,13 +95,15 @@
 
     ---
 
-    凤凰架构 · 微服务设计（第2版） · 解构领域驱动设计 · AI Prompt Engineering: The 2026 Guide · AI Engineering (Chip Huyen, 蒸馏中）
+    凤凰架构 · 微服务设计（第2版） · 解构领域驱动设计 · AI Prompt Engineering：The 2026 Guide · AI Engineering (Chip Huyen)
 
     :material-bookmark-multiple: 从分布式演进到领域建模，从云原生架构到 AI 工程方法论
 
     [凤凰架构](./凤凰架构：构建可靠的大型分布式系统/INDEX.md){ .md-button }
     [微服务设计](./微服务设计（第2版）/INDEX.md){ .md-button }
     [解构 DDD](./解构领域驱动设计/INDEX.md){ .md-button }
+    [AI Prompt](./AI Prompt Engineering：The 2026 Guide/INDEX.md){ .md-button }
+    [AI Engineering](./AI Engineering (Chip Huyen)/INDEX.md){ .md-button }
 
 </div>
 
