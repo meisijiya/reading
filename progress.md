@@ -31,7 +31,7 @@
 | 问题 | 状态 | 风险 |
 |---|---|---|
 | `docs/AI Engineering (Chip Huyen)` 是 broken symlink | 预存在 | mkdocs build 本地会 warning「No such file or directory」；CI/Linux 正常；该书本身未进 git |
-| Windows 下 git 对 U+F03A (PUA) 字符路径处理异常 | 预存在 | AI Prompt Engineering 那本书的目录名带 PUA 字符；git add/checkout/reset/mv 在 shell 层都需要绕路（用 Python 走 PUA 字符 literal） |
+| Windows 下 git 对 U+F03A (PUA) 字符路径处理异常 | 已解决 | 书目录名从 PUA 字符 U+F03A 改为全角冒号 U+FF1A（`AI Prompt Engineering：The 2026 Guide`），Windows 与 Linux 都能正常 add/checkout/mv，shell 层不再需要绕路。起因是另一分支用了 ASCII 冒号「:」，那是 Windows 保留字符，git 连检出都做不到 |
 | `mkdocs build --strict` 在 Windows 本地会因 symlink 失败 | 预存在 | 推 CI 验；本地不强求 |
 
 ## 暂停 / 终止条件
