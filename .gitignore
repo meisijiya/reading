@@ -32,6 +32,8 @@ htmlcov/
 .omo/run-continuation/
 # 蒸馏过程的临时脚本、探查产物、旧包备份
 .scratch/
+# 变异证伪脚本的中途备份：跑到一半被打断会留在 docs/assets/ 里
+*.css.mutbak
 
 # === 编辑器 / 系统垃圾 ===
 .DS_Store
