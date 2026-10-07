@@ -63,13 +63,13 @@ export WEREAD_API_KEY=$(grep -oP 'WEREAD_API_KEY=\K\S+' ~/.bashrc | tail -1)
 - 触发器：`.github/workflows/pages.yml` 监听 main 分支 push，无需手动触发（另有 `workflow_dispatch` 可手动重跑）。
 - 构建：GitHub Actions 装 `requirements.txt` 后跑 `mkdocs build --strict`，用 `actions/upload-pages-artifact` + `actions/deploy-pages` 发布到 gh-pages。
 - CI 不跑 UI 门禁（runner 里没有 Playwright），UI 层回归只能靠本地按规则五跑 `scripts/ui/` 那三条。
-- 导航生成：`mkdocs-awesome-nav` 自动扫描仓库根所有 `<书名>/INDEX.md` 并入 nav，**完全不用手改 `mkdocs.yml` 的 nav 段**。
 - 入口渲染：`mkdocs-section-index` 把每本书的 INDEX.md 渲染成 section 入口页，点击书名直达知识包首页。
+- 导航：**手写**（见下面的半自动契约）。`plugins:` 段只有 `search`（Material 自带）和 `section-index`，**没有 `mkdocs-awesome-nav`**——早先那段「自动扫描、完全不用手改 nav」的描述已随该插件弃用而作废，别照着做。
 - 透明性：book 目录的增减对 worker 完全透明。建好目录推上去，站点自动长出新书卡片。
 
 **唯一约束**：每本书目录下必须有 `<书名>/INDEX.md`。
 
-`mkdocs-awesome-nav` 靠它定位 section 入口；缺失则 `mkdocs build --strict` 失败，CI 挂掉。Worker 必须严格按规则一的目录模板建包，别自创目录结构、别省略 INDEX.md、别把 INDEX.md 塞到子目录里——任何一项违规都会让 CI 红。
+Worker 必须严格按规则一的目录模板建包，别自创目录结构、别省略 INDEX.md、别把 INDEX.md 塞到子目录里——nav 段手写时漏掉它，`mkdocs build --strict` 就会失败，CI 挂掉。
 
 **半自动契约**（实测同步规则）：
 
